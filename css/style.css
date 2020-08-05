@@ -1,8 +1,12 @@
 body{
 	background-color: #66ccff;
+	text-align:center;
 }
 h2{
 	font-size: 50;
 	color: red;
+	text-align: center;
+}
+img{
 	text-align: center;
 }
