@@ -1,12 +1,43 @@
 body{
-	background-color: #66ccff;
+	/*background-color: #66ccff;*/
 	text-align:center;
 }
 h2{
-	font-size: 50;
+	font-size: 10px;
 	color: red;
 	text-align: center;
 }
 img{
 	text-align: center;
+	width: 100px;
+}
+#container{
+	margin: 0 auto;
+	width: 1500px;
+	/*background-color: #6cf; */
+}
+#header{
+	background-color: #6cf;
+}
+#main{
+	height: 1000px;
+}
+#game{
+	background-color: #cff;
+	height: 1000px;
+	margin: 0 auto;
+	float: left;
+	width:740px;
+	border-right: 10px;
+}
+#program{
+	background-color: #cff;
+	height: 1000px;
+	margin: 0 auto;
+	float: right;
+	width:740px;
+	border-left: 10px;
+}
+#footer{
+	background-color: #6cf;
 }
