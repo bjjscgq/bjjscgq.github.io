@@ -97,42 +97,36 @@ window.onload = function(){
 		{
 			if(playerWin(1))
 			{
-				alert("圈赢了");
-				qiZiBuJu = [0, 0, 0, 0, 0, 0, 0, 0, 0];
-				player = 1;
+				render();
+				setTimeout(function(){ alert("圈赢了");qiZiBuJu = [0, 0, 0, 0, 0, 0, 0, 0, 0]; player = 1; }, 1);	
 			}
 			else if(playerWin(2))
 			{
-				alert("叉赢了");
-				qiZiBuJu = [0, 0, 0, 0, 0, 0, 0, 0, 0];
-				player = 1;
+				render();
+				setTimeout(function(){ alert("叉赢了");qiZiBuJu = [0, 0, 0, 0, 0, 0, 0, 0, 0]; player = 1; }, 1);
 			}
 			else if(qiPanMan())
 			{
-				alert("平局");
-				qiZiBuJu = [0, 0, 0, 0, 0, 0, 0, 0, 0];
-				player = 1;
+				render();
+				setTimeout(function(){ alert("平局");qiZiBuJu = [0, 0, 0, 0, 0, 0, 0, 0, 0]; player = 1; }, 1);
 			}
 		}
 		if(gamemode == 2)
 		{
 			if(playerWin(1))
 			{
-				alert("圈赢了");
-				qiZiBuJu2 = [0, 0, 0, 0, 0, 0, 0, 0, 0];
-				player2 = 1;
+				render();
+				setTimeout(function(){ alert("圈赢了");qiZiBuJu2 = [0, 0, 0, 0, 0, 0, 0, 0, 0]; player2 = 1; }, 1);
 			}
 			else if(playerWin(2))
 			{
-				alert("叉赢了");
-				qiZiBuJu2 = [0, 0, 0, 0, 0, 0, 0, 0, 0];
-				player2 = 1;
+				render();
+				setTimeout(function(){ alert("叉赢了");qiZiBuJu2 = [0, 0, 0, 0, 0, 0, 0, 0, 0]; player2 = 1; }, 1);
 			}
 			else if(qiPan2Man())
 			{
-				alert("平局");
-				qiZiBuJu2 = [0, 0, 0, 0, 0, 0, 0, 0, 0];
-				player2 = 1;
+				render();
+				setTimeout(function(){ alert("平局");qiZiBuJu2 = [0, 0, 0, 0, 0, 0, 0, 0, 0]; player2 = 1; }, 1);
 			}
 		}
 	}
