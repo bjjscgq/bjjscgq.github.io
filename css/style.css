@@ -38,6 +38,13 @@ img{
 	width:740px;
 	border-left: 10px;
 }
+#SPSS{
+	background-color: #cff;
+	height: 1000px;
+	margin: 0 auto;
+	width:1500px;
+	border-left: 10px;
+}
 #footer{
 	background-color: #6cf;
 }

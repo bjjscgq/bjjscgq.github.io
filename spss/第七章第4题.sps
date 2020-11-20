@@ -1,6 +1,5 @@
-* Encoding: GBK.
+* Encoding: UTF-8.
 
-DATASET ACTIVATE DataSet0.
 WEIGHT BY freq.
 
 CROSSTABS
