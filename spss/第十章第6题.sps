@@ -1,0 +1,5 @@
+﻿* Encoding: UTF-8.
+EXAMINE VARIABLES=血浆总皮质醇 BY 组别
+  /PLOT=BOXPLOT
+  /STATISTICS=NONE
+  /NOTOTAL.
