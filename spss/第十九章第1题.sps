@@ -1,0 +1,7 @@
+﻿* Encoding: UTF-8.
+
+KM 随访时间 BY 治疗
+  /STATUS=状态(0)
+  /PRINT TABLE MEAN
+  /TEST LOGRANK
+  /COMPARE OVERALL POOLED.
