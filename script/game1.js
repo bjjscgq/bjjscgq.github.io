@@ -1,7 +1,7 @@
 //参考文献：https://www.cnblogs.com/zhaoyu1995/p/6067762.html
 window.onload = function(){
 	//获取画布以及context
-	var canvas = document.getElementById("viewport");
+	var canvas = document.getElementById("game1");
 	var context = canvas.getContext("2d");
 
 	var lastframe = 0; 		//上一次刷新的时间
