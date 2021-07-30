@@ -181,7 +181,12 @@ window.onload = function() {
                 var pos = getMousePos(canvas, e);
                 if (pos.x >= FSCJ.x && pos.x < FSCJ.x + FSCJ.width &&
                     pos.y >= FSCJ.y && pos.y < FSCJ.y + FSCJ.height) {
-                    usrname = prompt('请输入用户名');
+                    
+                	while(true){
+                		usrname = prompt('请输入用户名');
+                		if(usrname)
+                			break;
+                	}
                     e = usrname + '上传';
                     d = "分数: " + dollar + "步数: " + step + '\n';
                     d += " Time:" + Date();
