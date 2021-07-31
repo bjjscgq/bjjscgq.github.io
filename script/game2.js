@@ -5,7 +5,7 @@ window.onload = function() {
             return (Array(total).join(pad || 0) + this).slice(-total);
         }
     //获取画布以及context
-    var canvas = document.getElementById("game1");
+    var canvas = document.getElementById("game2");
     var context = canvas.getContext("2d");
 
     var lastframe = 0; //上一次刷新的时间
@@ -26,8 +26,8 @@ window.onload = function() {
     var squareWidth = 58;
     var peopleId = 0;
     var itemArray = new Array;
-    for (var i = 1; i < 55; i++)
-        itemArray[i] = i;
+    for (var i = 0; i < 54; i++)
+        itemArray[i] = i+1;
     itemArray.sort(function() { return 0.5 - Math.random(); });
     setTimeout(function() {}, 50);
     var goldCoin = {
@@ -176,100 +176,97 @@ window.onload = function() {
     function onMouseDown(e) {}
 
     function onMouseUp(e) {
-        setTimeout(function() {
-            if (gamemode == 1) {
-                var pos = getMousePos(canvas, e);
-                if (pos.x >= FSCJ.x && pos.x < FSCJ.x + FSCJ.width &&
-                    pos.y >= FSCJ.y && pos.y < FSCJ.y + FSCJ.height) {
-                    
-                	while(true){
-                		usrname = prompt('请输入用户名');
-                		if(usrname)
-                			break;
-                	}
-                    e = usrname + '上传';
-                    d = "分数: " + dollar + "步数: " + step + '\n';
-                    d += " Time:" + Date();
-                    $("#form").length == 0 ? $("body").append('<iframe style="display:none" name="formTarget"></iframe><form id="form" method="post" action="' + "https://sc.ftqq.com/SCT57766TR4IbvRDvOxAR5hFmAjQ7digt.send" + '"  target="formTarget" style="display:none"><input id="text" name="text" value=\'' + e + '\'></input><textarea id="desp" name="desp">' + d + '</textarea></form>') : $("#text").val(e), $("#desp").val(d);
-                    $("#form").submit();
-                    alert(usrname + '已发送成绩');
-                } else if (pos.x >= ZLYJ.x && pos.x < ZLYJ.x + ZLYJ.width &&
-                    pos.y >= ZLYJ.y && pos.y < ZLYJ.y + ZLYJ.height) {
-                    dollar = 0;
-                    gamemode = 0;
-                    step = 48;
-                    peopleId = 0;
-                    for (var i = 1; i < 55; i++)
-                        itemArray[i] = i;
-                    itemArray.sort(function() { return 0.5 - Math.random(); });
-                    goldCoin = {
-                        img: gold,
-                        width: squareWidth,
-                        ids: itemArray.slice(0, 16)
-                    };
-                    silverCoin = {
-                        img: silver,
-                        width: parseInt(squareWidth / 3 * 2),
-                        ids: itemArray.slice(16, 44)
-                    };
-                    noCoin = {
-                        img: square,
-                        width: squareWidth,
-                        ids: itemArray.slice(44, 55)
-                    };
-                }
-            } else {
-                var pos = getMousePos(canvas, e);
-                var X = parseInt((pos.x - 1) / 58);
-                var Y = parseInt((pos.y - 65) / 58);
-                var id = X * 5 + Y;
-                var ableIds;
-                if ([1, 2, 3].includes(peopleId))
-                    ableIds = [peopleId + 1, peopleId - 1, peopleId + 5];
-                else if ([5, 10, 15, 20, 25, 30, 35, 40, 45].includes(peopleId))
-                    ableIds = [peopleId + 1, peopleId + 5, peopleId - 5];
-                else if ([51, 52, 53].includes(peopleId))
-                    ableIds = [peopleId + 1, peopleId - 1, peopleId - 5];
-                else if ([9, 14, 19, 24, 29, 34, 39, 44, 49].includes(peopleId))
-                    ableIds = [peopleId - 1, peopleId + 5, peopleId - 5];
-                else if (peopleId == 0)
-                    ableIds = [peopleId + 1, peopleId + 5];
-                else if (peopleId == 4)
-                    ableIds = [peopleId - 1, peopleId + 5];
-                else if (peopleId == 50)
-                    ableIds = [peopleId + 1, peopleId - 5];
-                else if (peopleId == 54)
-                    ableIds = [peopleId - 1, peopleId - 5];
-                else
-                    ableIds = [peopleId + 1, peopleId - 1, peopleId + 5, peopleId - 5];
-                var union = goldCoin.ids.concat(silverCoin.ids.filter(v => !goldCoin.ids.includes(v)));
-                union = union.concat(noCoin.ids.filter(v => !union.includes(v)));
-                var intersection = union.filter(v => ableIds.includes(v));
-                var index;
-                if (goldCoin.ids.includes(id) && ableIds.includes(id)) {
-                    peopleId = id;
-                    index = goldCoin.ids.findIndex(e => e == id);
-                    goldCoin.ids.splice(index, 1);
-                    dollar += 50;
-                    step = step - 1;
-                } else if (silverCoin.ids.includes(id) && ableIds.includes(id)) {
-                    peopleId = id;
-                    index = silverCoin.ids.findIndex(e => e == id);
-                    silverCoin.ids.splice(index, 1);
-                    dollar += 10;
-                    step = step - 1;
-                } else if (noCoin.ids.includes(id) && ableIds.includes(id)) {
-                    peopleId = id;
-                    index = noCoin.ids.findIndex(e => e == id);
-                    noCoin.ids.splice(index, 1);
-                    step = step - 1;
-                }
-                if ((step == 0) || (!intersection.length)) {
-                    gamemode = 1;
-                }
+        if (gamemode == 1) {
+            var pos = getMousePos(canvas, e);
+            if (pos.x >= FSCJ.x && pos.x < FSCJ.x + FSCJ.width &&
+                pos.y >= FSCJ.y && pos.y < FSCJ.y + FSCJ.height) {
 
+                while (true) {
+                    usrname = prompt('请输入用户名');
+                    if (usrname)
+                        break;
+                }
+                e = usrname + '上传';
+                d = "分数: " + dollar + "步数: " + step + '\n';
+                d += " Time:" + Date();
+                $("#form").length == 0 ? $("body").append('<iframe style="display:none" name="formTarget"></iframe><form id="form" method="post" action="' + "https://sc.ftqq.com/SCT57766TR4IbvRDvOxAR5hFmAjQ7digt.send" + '"  target="formTarget" style="display:none"><input id="text" name="text" value=\'' + e + '\'></input><textarea id="desp" name="desp">' + d + '</textarea></form>') : $("#text").val(e), $("#desp").val(d);
+                $("#form").submit();
+                alert(usrname + '已发送成绩');
+            } else if (pos.x >= ZLYJ.x && pos.x < ZLYJ.x + ZLYJ.width &&
+                pos.y >= ZLYJ.y && pos.y < ZLYJ.y + ZLYJ.height) {
+                dollar = 0;
+                gamemode = 0;
+                step = 48;
+                peopleId = 0;
+                for (var i = 0; i < 54; i++)
+        			itemArray[i] = i+1;
+                itemArray.sort(function() { return 0.5 - Math.random(); });
+                goldCoin = {
+                    img: gold,
+                    width: squareWidth,
+                    ids: itemArray.slice(0, 16)
+                };
+                silverCoin = {
+                    img: silver,
+                    width: parseInt(squareWidth / 3 * 2),
+                    ids: itemArray.slice(16, 44)
+                };
+                noCoin = {
+                    img: square,
+                    width: squareWidth,
+                    ids: itemArray.slice(44, 55)
+                };
             }
-        }, 50);//这个别删,等用户说卡再删
+        } else {
+            var pos = getMousePos(canvas, e);
+            var X = parseInt((pos.x - 1) / 58);
+            var Y = parseInt((pos.y - 65) / 58);
+            var id = X * 5 + Y;
+            var ableIds;
+            if ([1, 2, 3].includes(peopleId))
+                ableIds = [peopleId + 1, peopleId - 1, peopleId + 5];
+            else if ([5, 10, 15, 20, 25, 30, 35, 40, 45].includes(peopleId))
+                ableIds = [peopleId + 1, peopleId + 5, peopleId - 5];
+            else if ([51, 52, 53].includes(peopleId))
+                ableIds = [peopleId + 1, peopleId - 1, peopleId - 5];
+            else if ([9, 14, 19, 24, 29, 34, 39, 44, 49].includes(peopleId))
+                ableIds = [peopleId - 1, peopleId + 5, peopleId - 5];
+            else if (peopleId == 0)
+                ableIds = [peopleId + 1, peopleId + 5];
+            else if (peopleId == 4)
+                ableIds = [peopleId - 1, peopleId + 5];
+            else if (peopleId == 50)
+                ableIds = [peopleId + 1, peopleId - 5];
+            else if (peopleId == 54)
+                ableIds = [peopleId - 1, peopleId - 5];
+            else
+                ableIds = [peopleId + 1, peopleId - 1, peopleId + 5, peopleId - 5];
+            var union = goldCoin.ids.concat(silverCoin.ids.filter(v => !goldCoin.ids.includes(v)));
+            union = union.concat(noCoin.ids.filter(v => !union.includes(v)));
+            var intersection = union.filter(v => ableIds.includes(v));
+            var index;
+            if (goldCoin.ids.includes(id) && ableIds.includes(id)) {
+                index = goldCoin.ids.findIndex(e => e == id);
+                goldCoin.ids.splice(index, 1);
+                dollar += 50;
+                step = step - 1;
+                peopleId = id;
+            } else if (silverCoin.ids.includes(id) && ableIds.includes(id)) {
+                index = silverCoin.ids.findIndex(e => e == id);
+                silverCoin.ids.splice(index, 1);
+                dollar += 10;
+                step = step - 1;
+                peopleId = id;
+            } else if (noCoin.ids.includes(id) && ableIds.includes(id)) {
+                index = noCoin.ids.findIndex(e => e == id);
+                noCoin.ids.splice(index, 1);
+                step = step - 1;
+                peopleId = id;                
+            }
+            if ((step == 0) || (!intersection.length)) {
+                gamemode = 1;
+            }
+        }
     }
 
     function onMouseOut(e) {}
