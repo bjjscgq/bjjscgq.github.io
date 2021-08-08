@@ -7,7 +7,6 @@ window.onload = function() {
     //获取画布以及context
     var canvas = document.getElementById("game2");
     var context = canvas.getContext("2d");
-
     var lastframe = 0; //上一次刷新的时间
     var fpstime = 0; //帧时间
     var framecount = 0; //帧数
@@ -27,23 +26,22 @@ window.onload = function() {
     var peopleId = 0;
     var itemArray = new Array;
     for (var i = 0; i < 54; i++)
-        itemArray[i] = i+1;
-    itemArray.sort(function() { return 0.5 - Math.random(); });
-    setTimeout(function() {}, 50);
+        itemArray[i] = i + 1;
+    itemArraySorted = itemArray.sort(function() { return 0.5 - Math.random(); });
     var goldCoin = {
         img: gold,
         width: squareWidth,
-        ids: itemArray.slice(0, 16)
+        ids: itemArraySorted.slice(0, 16)
     };
     var silverCoin = {
         img: silver,
         width: parseInt(squareWidth / 3 * 2),
-        ids: itemArray.slice(16, 44)
+        ids: itemArraySorted.slice(16, 44)
     };
     var noCoin = {
         img: square,
         width: squareWidth,
-        ids: itemArray.slice(44, 55)
+        ids: itemArraySorted.slice(44, 55)
     };
     var ZLYJ = {
         x: 20,
@@ -199,22 +197,22 @@ window.onload = function() {
                 step = 48;
                 peopleId = 0;
                 for (var i = 0; i < 54; i++)
-        			itemArray[i] = i+1;
-                itemArray.sort(function() { return 0.5 - Math.random(); });
+                    itemArray[i] = i + 1;
+                itemArraySorted = itemArray.sort(function() { return 0.5 - Math.random(); });
                 goldCoin = {
                     img: gold,
                     width: squareWidth,
-                    ids: itemArray.slice(0, 16)
+                    ids: itemArraySorted.slice(0, 16)
                 };
                 silverCoin = {
                     img: silver,
                     width: parseInt(squareWidth / 3 * 2),
-                    ids: itemArray.slice(16, 44)
+                    ids: itemArraySorted.slice(16, 44)
                 };
                 noCoin = {
                     img: square,
                     width: squareWidth,
-                    ids: itemArray.slice(44, 55)
+                    ids: itemArraySorted.slice(44, 55)
                 };
             }
         } else {
@@ -261,7 +259,7 @@ window.onload = function() {
                 index = noCoin.ids.findIndex(e => e == id);
                 noCoin.ids.splice(index, 1);
                 step = step - 1;
-                peopleId = id;                
+                peopleId = id;
             }
             if ((step == 0) || (!intersection.length)) {
                 gamemode = 1;
