@@ -10,5 +10,6 @@ request.onload = function () {/*XHR对象获取到返回信息后执行*/
 }
 function find(){
     var index = parseInt(document.getElementById("in").value)-1;
-    alert(json.daFuWeng[index].answer)
+    document.getElementById("question").value = json.daFuWeng[index].question;
+    document.getElementById("answer").value = json.daFuWeng[index].answer;
 }
