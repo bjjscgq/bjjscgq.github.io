@@ -1,0 +1,92 @@
+{
+    "1001": {
+        "id": 1001,
+        "name": "农村",
+        "description": "出生在农村",
+        "grade": 0
+    },
+    "1002": {
+        "id": 1002,
+        "name": "家境",
+        "description": "家境+1",
+        "grade": 0,
+        "effect": {
+            "MNY": 1
+        }
+    },
+    "1003": {
+        "id": 1003,
+        "name": "智力",
+        "description": "智力+1",
+        "grade": 0,
+        "effect": {
+            "INT": 1
+        }
+    },
+    "1004": {
+        "id": 1004,
+        "name": "颜值",
+        "description": "颜值+1",
+        "grade": 0,
+        "effect": {
+            "CHR": 1
+        }
+    },
+    "1005": {
+        "id": 1005,
+        "name": "体质",
+        "description": "体质+1",
+        "grade": 0,
+        "effect": {
+            "STR": 1
+        }
+    },
+    "1006": {
+        "id": 1006,
+        "name": "医患关系",
+        "description": "遇到医患矛盾的几率变小",
+        "grade": 0
+    },
+    "1007": {
+        "id": 1007,
+        "name": "牙科医生",
+        "description": "口腔专业几率增加",
+        "grade": 0
+    },
+    "1008": {
+        "id": 1008,
+        "name": "生而为男",
+        "description": "必定是男生",
+        "grade": 1,
+        "exclusive": [
+            "1009"
+        ]
+    },
+    "1009": {
+        "id": 1009,
+        "name": "生而为女",
+        "description": "必定是女生",
+        "grade": 1,
+        "exclusive": [
+            "1008"
+        ]
+    },
+    "1010": {
+        "id": 1010,
+        "name": "占位符",
+        "description": "少一个可选天赋",
+        "grade": 0
+    },
+    "1011": {
+        "id": 1011,
+        "name": "占位符",
+        "description": "少一个可选天赋",
+        "grade": 0
+    },
+    "1012": {
+        "id": 1012,
+        "name": "占位符",
+        "description": "少一个可选天赋",
+        "grade": 0
+    }
+}
