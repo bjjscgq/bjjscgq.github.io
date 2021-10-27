@@ -1,0 +1,475 @@
+{
+    "words": [
+    {
+        "English": "operational formation",
+        "Chinese": "作战编成"
+    },
+    {
+        "English": "mission command",
+        "Chinese": "任务指挥"
+    },
+    {
+        "English": "command and control",
+        "Chinese": "指挥与控制"
+    },
+    {
+        "English": "theater level",
+        "Chinese": "战区级"
+    },
+    {
+        "English": "designation",
+        "Chinese": "番号"
+    },
+    {
+        "English": "fire team",
+        "Chinese": "火力组"
+    },
+    {
+        "English": "squad",
+        "Chinese": "班"
+    },
+    {
+        "English": "organic",
+        "Chinese": "建制的"
+    },
+    {
+        "English": "platoon",
+        "Chinese": "排"
+    },
+    {
+        "English": "division",
+        "Chinese": "师"
+    },
+    {
+        "English": "squadron",
+        "Chinese": "中队"
+    },
+    {
+        "English": "augmentation",
+        "Chinese": "扩编"
+    },
+    {
+        "English": "brigade",
+        "Chinese": "旅"
+    },
+    {
+        "English": "noncommissioned officer",
+        "Chinese": "士官，军士"
+    },
+    {
+        "English": "company",
+        "Chinese": "连"
+    },
+    {
+        "English": "regiment",
+        "Chinese": "团"
+    },
+    {
+        "English": "air superiority",
+        "Chinese": "空中优势，制空权"
+    },
+    {
+        "English": "offensive operation",
+        "Chinese": "进攻作战"
+    },
+    {
+        "English": "air defense",
+        "Chinese": "防空"
+    },
+    {
+        "English": "instructor pilot",
+        "Chinese": "飞行教官"
+    },
+    {
+        "English": "interoperability",
+        "Chinese": "协同作战能力"
+    },
+    {
+        "English": "air-to-ground",
+        "Chinese": "空对地作战"
+    },
+    {
+        "English": "lieutenant colonel",
+        "Chinese": "中校"
+    },
+    {
+        "English": "combat scenario",
+        "Chinese": "作战想定"
+    },
+    {
+        "English": "logistics",
+        "Chinese": "后勤"
+    },
+    {
+        "English": "offensive counterair",
+        "Chinese": "进攻型防空作战"
+    },
+    {
+        "English": "defensive counterair",
+        "Chinese": "防御型防空作战"
+    },
+    {
+        "English": "munitions",
+        "Chinese": "弹药，军火"
+    },
+    {
+        "English": "Blue Helmets",
+        "Chinese": "“蓝盔”（联合国部队人员）"
+    },
+    {
+        "English": "uniformed personnel",
+        "Chinese": "军警人员"
+    },
+    {
+        "English": "military observer",
+        "Chinese": "军事观察员"
+    },
+    {
+        "English": "enabler",
+        "Chinese": "赋能者，保障部队"
+    },
+    {
+        "English": "armistice",
+        "Chinese": "休战，停战"
+    },
+    {
+        "English": "conflict zone",
+        "Chinese": "冲突地区"
+    },
+    {
+        "English": "ex-combatant",
+        "Chinese": "前战斗人员"
+    },
+    {
+        "English": "ambush",
+        "Chinese": "伏击"
+    },
+    {
+        "English": "liaise",
+        "Chinese": "联络"
+    },
+    {
+        "English": "formed unit",
+        "Chinese": "建制部队"
+    },
+    {
+        "English": "doctrine",
+        "Chinese": "条令条例"
+    },
+    {
+        "English": "referral center",
+        "Chinese": "转诊中心"
+    },
+    {
+        "English": "evacuation",
+        "Chinese": "（伤员）后送"
+    },
+    {
+        "English": "lifesaving surgical care",
+        "Chinese": "急救手术"
+    },
+    {
+        "English": "echelon",
+        "Chinese": "梯队"
+    },
+    {
+        "English": "disease and non-battle injury (DNBI)",
+        "Chinese": "疾病和非战斗伤"
+    },
+    {
+        "English": "combat trauma",
+        "Chinese": "战伤"
+    },
+    {
+        "English": "duty corpsman",
+        "Chinese": "值勤看护兵"
+    },
+    {
+        "English": "medic",
+        "Chinese": "军医"
+    },
+    {
+        "English": "combat casualties care",
+        "Chinese": "战地伤员救治"
+    },
+    {
+        "English": "air superiority",
+        "Chinese": "空中优势"
+    },
+    {
+        "English": "theater",
+        "Chinese": "战区"
+    },
+    {
+        "English": "triage",
+        "Chinese": "检伤分类"
+    },
+    {
+        "English": "military surgeon",
+        "Chinese": "军医"
+    },
+    {
+        "English": "mass casualty incident",
+        "Chinese": "伤员密集情况"
+    },
+    {
+        "English": "tactics",
+        "Chinese": "战术"
+    },
+    {
+        "English": "combat zone",
+        "Chinese": "战区"
+    },
+    {
+        "English": "hostile fire",
+        "Chinese": "敌方火力"
+    },
+    {
+        "English": "improvised explosive device",
+        "Chinese": "简易爆炸装置"
+    },
+    {
+        "English": "penetrating injury",
+        "Chinese": "贯通伤"
+    },
+    {
+        "English": "died of wounds",
+        "Chinese": "伤亡"
+    },
+    {
+        "English": "ambush",
+        "Chinese": "伏击"
+    },
+    {
+        "English": "triage sieve",
+        "Chinese": "伤病员筛分"
+    },
+    {
+        "English": "medical evacuation",
+        "Chinese": "医疗后送"
+    },
+    {
+        "English": "casualty clearing station",
+        "Chinese": "伤员医疗站，伤员临时收容站"
+    },
+    {
+        "English": "medical treatment facility",
+        "Chinese": "医疗救治机构"
+    },
+    {
+        "English": "battalion aid station",
+        "Chinese": "营救护所"
+    },
+    {
+        "English": "damage control resuscitation",
+        "Chinese": "损伤控制复苏"
+    },
+    {
+        "English": "forward surgical team",
+        "Chinese": "前方手术队"
+    },
+    {
+        "English": "damage control surgery",
+        "Chinese": "损伤控制手术"
+    },
+    {
+        "English": "intensive care",
+        "Chinese": "重症监护"
+    },
+    {
+        "English": "reconstructive surgery",
+        "Chinese": "修复外科手术"
+    },
+    {
+        "English": "respiratory obstruction",
+        "Chinese": "呼吸道阻塞"
+    },
+    {
+        "English": "hemorrhage",
+        "Chinese": "大出血"
+    },
+    {
+        "English": "amputation",
+        "Chinese": "截肢"
+    },
+    {
+        "English": "fracture",
+        "Chinese": "骨折"
+    },
+    {
+        "English": "deployment",
+        "Chinese": "部署"
+    },
+    {
+        "English": "abrasion",
+        "Chinese": "擦伤"
+    },
+    {
+        "English": "multiple injuries",
+        "Chinese": "复合伤"
+    },
+    {
+        "English": "casualty air evacuation system",
+        "Chinese": "战伤人员空中后送系统"
+    },
+    {
+        "English": "rotary and fixed wing",
+        "Chinese": "旋转翼和固定翼飞机"
+    },
+    {
+        "English": "base hospital",
+        "Chinese": "基地医院"
+    },
+    {
+        "English": "secondary/tertiary medical care center",
+        "Chinese": "二级/三级医疗中心"
+    },
+    {
+        "English": "forward area",
+        "Chinese": "前方阵地"
+    },
+    {
+        "English": "contaminate",
+        "Chinese": "沾染"
+    },
+    {
+        "English": "decontamination",
+        "Chinese": "洗消"
+    },
+    {
+        "English": "engagement",
+        "Chinese": "交战"
+    },
+    {
+        "English": "maneuver",
+        "Chinese": "机动，调遣"
+    },
+    {
+        "English": "field hospital",
+        "Chinese": "野战医院"
+    },
+    {
+        "English": "patient transfer unit",
+        "Chinese": "伤员转运装置"
+    },
+    {
+        "English": "secondary infection",
+        "Chinese": "继发感染"
+    },
+    {
+        "English": "infusion pump",
+        "Chinese": "输液泵"
+    },
+    {
+        "English": "cabin environment",
+        "Chinese": "机舱环境"
+    },
+    {
+        "English": "GI tract （gastrointestinal）",
+        "Chinese": "消化道"
+    },
+    {
+        "English": "partial pressure",
+        "Chinese": "分压"
+    },
+    {
+        "English": "enplaning and deplaning airfield",
+        "Chinese": "飞机起降机场"
+    },
+    {
+        "English": "cruising altitude",
+        "Chinese": "（飞机）巡航高度"
+    },
+    {
+        "English": "respiratory passage",
+        "Chinese": "呼吸道"
+    },
+    {
+        "English": "protective equipment",
+        "Chinese": "防护装备"
+    },
+    {
+        "English": "IV fluids （intravenous）",
+        "Chinese": "静脉输液"
+    },
+    {
+        "English": "chemical warfare agent",
+        "Chinese": "化学战剂"
+    },
+    {
+        "English": "chemical casualty",
+        "Chinese": "化学战伤员"
+    },
+    {
+        "English": "incident response",
+        "Chinese": "事故响应"
+    },
+    {
+        "English": "toxidrome",
+        "Chinese": "中毒综合征"
+    },
+    {
+        "English": "civil-military operation",
+        "Chinese": "军民行动"
+    },
+    {
+        "English": "hospital ship",
+        "Chinese": "医院船"
+    },
+    {
+        "English": "risk communication",
+        "Chinese": "危险通报"
+    },
+    {
+        "English": "medical screening",
+        "Chinese": "医学筛查"
+    },
+    {
+        "English": "sick call",
+        "Chinese": "就诊伤员集合"
+    },
+    {
+        "English": "field-expedient surveillance",
+        "Chinese": "野战应急监控"
+    },
+    {
+        "English": "personal hygiene",
+        "Chinese": "个人卫生"
+    },
+    {
+        "English": "evolution",
+        "Chinese": "战术机动"
+    },
+    {
+        "English": "preventive medicine",
+        "Chinese": "预防医学"
+    },
+    {
+        "English": "force health protection",
+        "Chinese": "部队健康防护"
+    },
+    {
+        "English": "Global Health Engagement",
+        "Chinese": "全球健康参与"
+    },
+    {
+        "English": "humanitarian operation",
+        "Chinese": "人道主义行动"
+    },
+    {
+        "English": "occupational exposure",
+        "Chinese": "职业接触"
+    },
+    {
+        "English": "post-exposure prophylaxis",
+        "Chinese": "接触后预防"
+    },
+    {
+        "English": "pre-exposure vaccination",
+        "Chinese": "接触前免疫接种"
+    },
+    {
+        "English": "parent command",
+        "Chinese": "原编制单位"
+    }]
+}
