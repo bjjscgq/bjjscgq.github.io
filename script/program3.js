@@ -21,7 +21,7 @@ function bigCanvas(){
     $("#program3").attr("height", $(window).get(0).innerHeight*(parseInt(words.length/10)+1));
 }
 window.onload = function() {
-    $(window).resize(resizeCanvas);
+    //$(window).resize(resizeCanvas);
     //页面加载后先设置一下canvas大小
     resizeCanvas();
     String.prototype.padLeft =
