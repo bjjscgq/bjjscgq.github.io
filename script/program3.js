@@ -8,7 +8,6 @@ request.onload = function() { /*XHR对象获取到返回信息后执行*/
     if (request.status == 200) { /*返回状态为200，即为数据获取成功*/
         json = JSON.parse(request.responseText);
         var words = json.words;
-        alert(words.length);
     }
 }
 //窗口尺寸改变响应（修改canvas大小）
@@ -18,7 +17,7 @@ function resizeCanvas() {
 };
 function bigCanvas(){
     $("#program3").attr("width", $(window).get(0).innerWidth);
-    $("#program3").attr("height", $(window).get(0).innerHeight*10);
+    $("#program3").attr("height", $(window).get(0).innerHeight*(parseInt(words.length/10)+1));
 }
 window.onload = function() {
     $(window).resize(resizeCanvas);
@@ -156,13 +155,17 @@ window.onload = function() {
                 context.fillRect(YYH.x, YYH.y, YYH.width, YYH.height);
                 context.fillRect(HYY.x, HYY.y, HYY.width, HYY.height);
                 context.fillStyle = "white";
-                context.font = "100px TimesNewRoman";
+                context.font = "100px 幼圆";
                 context.fillText("看题库", canvas.width / 2 - 150, KTK.y + 100);
                 context.fillText("英译汉", canvas.width / 2 - 150, YYH.y + 100);
                 context.fillText("汉译英", canvas.width / 2 - 150, HYY.y + 100);
                 break;
             case 1:
-                
+                for(var i = 0; i<words.length;i++){
+                    context.fillStyle = "black";
+                    context.font = "100px 幼圆";
+                    context.fillText(words[i], 40, 100*(i+2));
+                }
                 break;
         }
     }
