@@ -1,5 +1,16 @@
 //参考文献：https://www.cnblogs.com/zhaoyu1995/p/6067762.html
-
+let requestUrl = "json/英汉.json";
+let request = new XMLHttpRequest();
+request.open('GET', requestUrl);
+request.send(null); /*不发送数据到服务器*/
+var json;
+request.onload = function() { /*XHR对象获取到返回信息后执行*/
+    if (request.status == 200) { /*返回状态为200，即为数据获取成功*/
+        json = JSON.parse(request.responseText);
+    }
+}
+alert(request);
+alert(json);
 //窗口尺寸改变响应（修改canvas大小）
 function resizeCanvas() {
     $("#program3").attr("width", $(window).get(0).innerWidth);
@@ -50,17 +61,7 @@ window.onload = function() {
         width: canvas.width - 40,
         height: (canvas.height - 100) / 3 - 10
     };//看题库
-    let requestUrl = "json/英汉.json";
-    let request = new XMLHttpRequest();
-    request.open('GET', requestUrl);
-    request.send(null); /*不发送数据到服务器*/
-    var json;
-    request.onload = function() { /*XHR对象获取到返回信息后执行*/
-        if (request.status == 200) { /*返回状态为200，即为数据获取成功*/
-            json = JSON.parse(request.responseText);
-        }
-    }
-    alert(json);
+
     var YYH = {
         x: 20,
         y: 86 + KTK.height + 20,
