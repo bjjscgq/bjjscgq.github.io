@@ -116,8 +116,8 @@ window.onload = function() {
     }
 
     function updateFps(dt) {
-        if (fpstime > 0.25) {
-            //每0.25s计算一次帧数
+        if (fpstime > 1) {
+            //每1s计算一次帧数
             fps = Math.round(framecount / fpstime);
             //重置帧数
             fpstime = 0;
