@@ -75,12 +75,7 @@ window.onload = function() {
         width: canvas.width - 40,
         height: (canvas.height - 100) / 3 - 10
     };//汉译英
-    var FHZCD = {
-        x: 20,
-        y: 86+28+parseInt($(window).get(0).innerHeight/10)*(words.length+1),
-        width: canvas.width - 40,
-        height: (canvas.height - 100) / 3 - 10
-    };//汉译英
+    var FHZCD;
     //游戏平面
     var level = {
         x: 1,
@@ -175,6 +170,12 @@ window.onload = function() {
                     context.fillText(words[i].English, 40, 86+parseInt($(window).get(0).innerHeight/10)*(i+1));
                     context.fillText(words[i].Chinese, 40, 86+28+parseInt($(window).get(0).innerHeight/10)*(i+1));
                 }
+                FHZCD = {
+                    x: 20,
+                    y: 86+28+parseInt($(window).get(0).innerHeight/10)*(words.length+1),
+                    width: canvas.width - 40,
+                    height: (canvas.height - 100) / 3 - 10
+                };//返回主菜单
                 context.fillStyle = "black";
                 context.fillRect(FHZCD.x, FHZCD.y, FHZCD.width, FHZCD.height);
                 context.fillStyle = "white";
