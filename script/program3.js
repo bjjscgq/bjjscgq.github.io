@@ -36,6 +36,7 @@ window.onload = function() {
     var framecount = 0; //帧数
     var fps = 0; //每秒传输帧数
     var gamemode = 0; //游戏模式，0表示主菜单，1表示看题库，2表示英译汉，3表示汉译英
+    var wordsArraySorted = words.sort(function() { return 0.5 - Math.random(); });
     /*var itemArray = new Array;
     for (var i = 0; i < 54; i++)
         itemArray[i] = i + 1;
@@ -71,6 +72,12 @@ window.onload = function() {
     var HYY = {
         x: 20,
         y: 86 + 2*(YYH.height + 20),
+        width: canvas.width - 40,
+        height: (canvas.height - 100) / 3 - 10
+    };//汉译英
+    var FHZCD = {
+        x: 20,
+        y: 86+28+parseInt($(window).get(0).innerHeight/10)*(words.length+1),
         width: canvas.width - 40,
         height: (canvas.height - 100) / 3 - 10
     };//汉译英
@@ -168,6 +175,12 @@ window.onload = function() {
                     context.fillText(words[i].English, 40, 86+parseInt($(window).get(0).innerHeight/10)*(i+1));
                     context.fillText(words[i].Chinese, 40, 86+28+parseInt($(window).get(0).innerHeight/10)*(i+1));
                 }
+                context.fillStyle = "black";
+                context.fillRect(FHZCD.x, FHZCD.y, FHZCD.width, FHZCD.height);
+                context.fillStyle = "white";
+                context.font = "100px 幼圆";
+                context.fillText("返回主菜单", canvas.width / 2 - 150, FHZCD.y + 100);
+                
                 break;
         }
     }
@@ -192,7 +205,12 @@ window.onload = function() {
                 gamemode = 3;
             }
         } else if (gamemode == 1) {
-
+            var pos = getMousePos(canvas, e);
+            if (pos.x >= FHZCD.x && pos.x < FHZCD.x + FHZCD.width &&
+                pos.y >= FHZCD.y && pos.y < FHZCD.y + FHZCD.height) {
+                gamemode = 0;
+                resizeCanvas();
+            }
         } else{
             var pos = getMousePos(canvas, e);
             var X = parseInt((pos.x - 1) / 58);
