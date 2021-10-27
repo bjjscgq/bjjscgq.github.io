@@ -18,7 +18,7 @@ function resizeCanvas() {
 };
 function bigCanvas(){
     $("#program3").attr("width", $(window).get(0).innerWidth);
-    $("#program3").attr("height", $(window).get(0).innerHeight*(parseInt(words.length/10)+1));
+    $("#program3").attr("height", $(window).get(0).innerHeight*(parseInt(words.length/10)+2));
 }
 window.onload = function() {
     //$(window).resize(resizeCanvas);
