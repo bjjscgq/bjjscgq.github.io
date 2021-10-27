@@ -163,9 +163,10 @@ window.onload = function() {
                 break;
             case 1:
                 context.fillStyle = "black";
-                context.font = parseInt($(window).get(0).innerHeight/12)+"px 幼圆";    
+                context.font = "24px 幼圆";    
                 for(var i = 0; i<words.length;i++){
                     context.fillText(words[i].English, 40, 86+parseInt($(window).get(0).innerHeight/10)*(i+1));
+                    context.fillText(words[i].Chinese, 40, 86+48+parseInt($(window).get(0).innerHeight/10)*(i+1));
                 }
                 break;
         }
