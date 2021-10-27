@@ -36,7 +36,7 @@ window.onload = function() {
     var framecount = 0; //帧数
     var fps = 0; //每秒传输帧数
     var gamemode = 0; //游戏模式，0表示主菜单，1表示看题库，2表示英译汉，3表示汉译英
-    var wordsArraySorted = words.sort(function() { return 0.5 - Math.random(); });
+    var wordsArraySorted;// = words.sort(function() { return 0.5 - Math.random(); });
     /*var itemArray = new Array;
     for (var i = 0; i < 54; i++)
         itemArray[i] = i + 1;
@@ -181,8 +181,9 @@ window.onload = function() {
                 context.fillStyle = "white";
                 context.font = "100px 幼圆";
                 context.fillText("返回主菜单", canvas.width / 2 - 150, FHZCD.y + 100);
-                
                 break;
+            case2:
+                wordsArraySorted = words.sort(function() { return 0.5 - Math.random(); });
         }
     }
 
