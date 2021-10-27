@@ -162,10 +162,10 @@ window.onload = function() {
                 context.fillText("汉译英", canvas.width / 2 - 150, HYY.y + 100);
                 break;
             case 1:
+                context.fillStyle = "black";
+                context.font = parseInt($(window).get(0).innerHeight/12)+"px 幼圆";    
                 for(var i = 0; i<words.length;i++){
-                    context.fillStyle = "black";
-                    context.font = "100px 幼圆";
-                    context.fillText(words[i], 40, 100*(i+2));
+                    context.fillText(words[i], 40, parseInt($(window).get(0).innerHeight/12)*(i+2));
                 }
                 break;
         }
