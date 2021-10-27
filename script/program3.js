@@ -9,7 +9,7 @@ request.onload = function() { /*XHR对象获取到返回信息后执行*/
         json = JSON.parse(request.responseText);
     }
 }
-alert(request);
+alert(request.status);
 alert(json);
 //窗口尺寸改变响应（修改canvas大小）
 function resizeCanvas() {
