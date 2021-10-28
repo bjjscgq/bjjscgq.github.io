@@ -194,7 +194,7 @@ window.onload = function() {
                         x: 20,
                         y: 86 + 2*(YYH.height + 20),
                         width: canvas.width - 40,
-                        height: 200
+                        height: (canvas.height - 100) / 3 - 10
                     };//返回主菜单
                     context.fillStyle = "black";
                     context.fillRect(FHZCD.x, FHZCD.y, FHZCD.width, FHZCD.height);
