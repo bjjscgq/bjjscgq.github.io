@@ -5,10 +5,12 @@ request.open('GET', requestUrl);
 request.send(null); /*不发送数据到服务器*/
 var json;
 var words;
+var wordsArraySorted; // = words.sort(function() { return 0.5 - Math.random(); });
 request.onload = function() { /*XHR对象获取到返回信息后执行*/
     if (request.status == 200) { /*返回状态为200，即为数据获取成功*/
         json = JSON.parse(request.responseText);
         words = json.words;
+        wordsArraySorted = words.sort(function() { return 0.5 - Math.random(); });
     }
 }
 //窗口尺寸改变响应（修改canvas大小）
@@ -16,9 +18,10 @@ function resizeCanvas() {
     $("#program3").attr("width", $(window).get(0).innerWidth);
     $("#program3").attr("height", $(window).get(0).innerHeight);
 };
-function bigCanvas(){
+
+function bigCanvas() {
     $("#program3").attr("width", $(window).get(0).innerWidth);
-    $("#program3").attr("height", $(window).get(0).innerHeight*(parseInt(words.length/10)+2));
+    $("#program3").attr("height", $(window).get(0).innerHeight * (parseInt(words.length / 10) + 2));
 }
 window.onload = function() {
     //$(window).resize(resizeCanvas);
@@ -36,7 +39,6 @@ window.onload = function() {
     var framecount = 0; //帧数
     var fps = 0; //每秒传输帧数
     var gamemode = 0; //游戏模式，0表示主菜单，1表示看题库，2表示英译汉，3表示汉译英
-    var wordsArraySorted;// = words.sort(function() { return 0.5 - Math.random(); });
     var wordsLearned = new Array;
     var wordsUnLearned = new Array;
     var KTK = {
@@ -44,25 +46,25 @@ window.onload = function() {
         y: 86,
         width: canvas.width - 40,
         height: (canvas.height - 100) / 3 - 10
-    };//看题库
+    }; //看题库
     var YYH = {
         x: 20,
         y: 86 + KTK.height + 20,
         width: canvas.width - 40,
         height: (canvas.height - 100) / 3 - 10
-    };//英译汉
+    }; //英译汉
     var HYY = {
         x: 20,
-        y: 86 + 2*(YYH.height + 20),
+        y: 86 + 2 * (YYH.height + 20),
         width: canvas.width - 40,
         height: (canvas.height - 100) / 3 - 10
-    };//汉译英
+    }; //汉译英
     var YHL = {
         x: 20,
-        y: 86 + 2*(YYH.height + 20),
-        width: (canvas.width - 40)/4,
-        height: (canvas.height - 100) / 3 - 10        
-    };//爷会了
+        y: 86 + 2 * (YYH.height + 20),
+        width: (canvas.width - 40) / 4,
+        height: (canvas.height - 100) / 3 - 10
+    }; //爷会了
     var FHZCD;
     //游戏平面
     var level = {
@@ -149,76 +151,74 @@ window.onload = function() {
                 context.fillRect(HYY.x, HYY.y, HYY.width, HYY.height);
                 context.fillStyle = "white";
                 context.font = "100px 幼圆";
-                context.fillText("看题库", canvas.width / 2 - 150, KTK.y + KTK.height/2+ 35);
-                context.fillText("英译汉", canvas.width / 2 - 150, YYH.y + YYH.height/2+ 35);
-                context.fillText("汉译英", canvas.width / 2 - 150, HYY.y + HYY.height/2+ 35);
+                context.fillText("看题库", canvas.width / 2 - 150, KTK.y + KTK.height / 2 + 35);
+                context.fillText("英译汉", canvas.width / 2 - 150, YYH.y + YYH.height / 2 + 35);
+                context.fillText("汉译英", canvas.width / 2 - 150, HYY.y + HYY.height / 2 + 35);
                 break;
             case 1:
                 context.fillStyle = "black";
-                context.font = "24px 幼圆";    
-                for(var i = 0; i<words.length;i++){
-                    context.fillText(words[i].English, 40, 86+parseInt($(window).get(0).innerHeight/10)*(i+1));
-                    context.fillText(words[i].Chinese, 40, 86+28+parseInt($(window).get(0).innerHeight/10)*(i+1));
+                context.font = "24px 幼圆";
+                for (var i = 0; i < words.length; i++) {
+                    context.fillText(words[i].English, 40, 86 + parseInt($(window).get(0).innerHeight / 10) * (i + 1));
+                    context.fillText(words[i].Chinese, 40, 86 + 28 + parseInt($(window).get(0).innerHeight / 10) * (i + 1));
                 }
                 FHZCD = {
                     x: 20,
-                    y: 86+28+parseInt($(window).get(0).innerHeight/10)*(words.length+1),
+                    y: 86 + 28 + parseInt($(window).get(0).innerHeight / 10) * (words.length + 1),
                     width: canvas.width - 40,
                     height: 200
-                };//返回主菜单
+                }; //返回主菜单
                 context.fillStyle = "black";
                 context.fillRect(FHZCD.x, FHZCD.y, FHZCD.width, FHZCD.height);
                 context.fillStyle = "white";
                 context.font = "100px 幼圆";
-                context.fillText("返回主菜单", canvas.width / 2 - 250, FHZCD.y +FHZCD.height/2+ 35);
+                context.fillText("返回主菜单", canvas.width / 2 - 250, FHZCD.y + FHZCD.height / 2 + 35);
                 break;
             case 2:
-                if(wordsUnLearned.length==0){
+                if (wordsUnLearned.length == 0) {
                     context.fillStyle = "black";
-                    context.font = "24px 幼圆";    
-                    context.fillText("这组的30个背完了", canvas.width / 2 - 12*9, 86+28);
+                    context.font = "24px 幼圆";
+                    context.fillText("这组的30个背完了", canvas.width / 2 - 12 * 9, 86 + 28);
                     FHZCD = {
                         x: 20,
-                        y: 86 + 2*(YYH.height + 20),
+                        y: 86 + 2 * (YYH.height + 20),
                         width: canvas.width - 40,
                         height: (canvas.height - 100) / 3 - 10
-                    };//返回主菜单
+                    }; //返回主菜单
                     context.fillStyle = "black";
                     context.fillRect(FHZCD.x, FHZCD.y, FHZCD.width, FHZCD.height);
                     context.fillStyle = "white";
                     context.font = "100px 幼圆";
-                    context.fillText("返回主菜单", canvas.width / 2 - 250, FHZCD.y +FHZCD.height/2+ 35);
-                }
-                else{
+                    context.fillText("返回主菜单", canvas.width / 2 - 250, FHZCD.y + FHZCD.height / 2 + 35);
+                } else {
                     context.fillStyle = "black";
-                    context.font = "50px TimesNewRoman";    
-                    context.fillText(wordLearning.English, (canvas.width - 25*(wordLearning.English.length))/2, 86+28);
+                    context.font = "50px TimesNewRoman";
+                    context.fillText(wordLearning.English, (canvas.width - 25 * (wordLearning.English.length)) / 2, 86 + 28);
                     context.fillStyle = "black";
                     context.fillRect(YHL.x, YHL.y, YHL.width, YHL.height);
                     context.fillStyle = "white";
                     context.font = "100px 幼圆";
-                    context.fillText("爷会了", YHL.x+YHL.width/2-50*3, YHL.y +YHL.height/2+ 35);                    
+                    context.fillText("爷会了", YHL.x + YHL.width / 2 - 50 * 3, YHL.y + YHL.height / 2 + 35);
                 }
                 break;
             case 3:
-                wordsArraySorted = words.sort(function() { return 0.5 - Math.random(); });
-                if(wordsUnLearned.length==0){
+                if (wordsUnLearned.length == 0) {
                     context.fillStyle = "black";
-                    context.font = "24px 幼圆";    
-                    context.fillText("这组的30个背完了", canvas.width / 2 - 12*9, 86+28);
+                    context.font = "24px 幼圆";
+                    context.fillText("这组的30个背完了", canvas.width / 2 - 12 * 9, 86 + 28);
                     FHZCD = {
                         x: 20,
-                        y: 86 + 2*(YYH.height + 20),
+                        y: 86 + 2 * (YYH.height + 20),
                         width: canvas.width - 40,
                         height: (canvas.height - 100) / 3 - 10
-                    };//返回主菜单
+                    }; //返回主菜单
                     context.fillStyle = "black";
                     context.fillRect(FHZCD.x, FHZCD.y, FHZCD.width, FHZCD.height);
                     context.fillStyle = "white";
                     context.font = "100px 幼圆";
-                    context.fillText("返回主菜单", canvas.width / 2 - 250, FHZCD.y +FHZCD.height/2+ 35);
+                    context.fillText("返回主菜单", canvas.width / 2 - 250, FHZCD.y + FHZCD.height / 2 + 35);
                 }
-                break;                
+                break;
         }
     }
 
@@ -237,16 +237,14 @@ window.onload = function() {
             } else if (pos.x >= YYH.x && pos.x < YYH.x + YYH.width &&
                 pos.y >= YYH.y && pos.y < YYH.y + YYH.height) {
                 gamemode = 2;
-                wordsArraySorted = words.sort(function() { return 0.5 - Math.random(); });
-                for(var i = 0; i<30;i++){
+                for (var i = 0; i < 30; i++) {
                     wordsUnLearned[i] = wordsArraySorted[indexYYH++];
                 }
                 wordLearning = wordsUnLearned.pop();
             } else if (pos.x >= HYY.x && pos.x < HYY.x + HYY.width &&
                 pos.y >= HYY.y && pos.y < HYY.y + HYY.height) {
                 gamemode = 3;
-                wordsArraySorted = words.sort(function() { return 0.5 - Math.random(); });
-                for(var i = 0; i<30;i++){
+                for (var i = 0; i < 30; i++) {
                     wordsUnLearned[i] = wordsArraySorted[indexHYY++];
                 }
                 wordLearning = wordsUnLearned.pop();
@@ -257,19 +255,30 @@ window.onload = function() {
                 pos.y >= FHZCD.y && pos.y < FHZCD.y + FHZCD.height) {
                 gamemode = 0;
                 resizeCanvas();
-            } 
+            }
         } else if (gamemode == 2) {
             var pos = getMousePos(canvas, e);
-            try{if (pos.x >= FHZCD.x && pos.x < FHZCD.x + FHZCD.width &&
-                pos.y >= FHZCD.y && pos.y < FHZCD.y + FHZCD.height) {
-                gamemode = 0;
-                resizeCanvas();
-            }}
-            catch{}
+            try {
+                if (pos.x >= FHZCD.x && pos.x < FHZCD.x + FHZCD.width &&
+                    pos.y >= FHZCD.y && pos.y < FHZCD.y + FHZCD.height) {
+                    gamemode = 0;
+                    resizeCanvas();
+                }
+            } catch {}
             if (pos.x >= YHL.x && pos.x < YHL.x + YHL.width &&
                 pos.y >= YHL.y && pos.y < YHL.y + YHL.height) {
                 wordsLearned.push(wordLearning);
                 wordLearning = wordsUnLearned.pop();
+            } else if (pos.x >= TJ.x && pos.x < TJ.x + TJ.width &&
+                pos.y >= TJ.y && pos.y < TJ.y + TJ.height) {
+                answer = prompt("请输入中文");
+                if(answer==wordLearning.Chinese){
+                    wordsLearned.push(wordLearning);
+                    wordLearning = wordsUnLearned.pop();
+                }
+            }else if (pos.x >= YBH.x && pos.x < YBH.x + YBH.width &&
+                pos.y >= YBH.y && pos.y < YBH.y + YBH.height) {
+
             }
         } else if (gamemode == 3) {
             var pos = getMousePos(canvas, e);
@@ -278,8 +287,8 @@ window.onload = function() {
                 gamemode = 0;
                 resizeCanvas();
             }
-        } else{
-            
+        } else {
+
         }
     }
 
