@@ -184,9 +184,8 @@ window.onload = function() {
                 context.font = "100px 幼圆";
                 context.fillText("返回主菜单", canvas.width / 2 - 250, FHZCD.y +FHZCD.height/2+ 50);
                 break;
-            case2:
+            case 2:
                 wordsArraySorted = words.sort(function() { return 0.5 - Math.random(); });
-                alert(wordsUnLearned.length);
                 if(wordsUnLearned.length==0){
                     context.fillStyle = "black";
                     context.font = "24px 幼圆";    
