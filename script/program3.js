@@ -193,6 +193,11 @@ window.onload = function() {
                     context.fillStyle = "black";
                     context.font = "50px TimesNewRoman";    
                     context.fillText(wordLearning.English, (canvas.width - 25*(wordLearning.English.length))/2, 86+28);
+                    context.fillStyle = "black";
+                    context.fillRect(YHL.x, YHL.y, YHL.width, YHL.height);
+                    context.fillStyle = "white";
+                    context.font = "100px 幼圆";
+                    context.fillText("爷会了", YHL.x+YHL.width/2-50*3, YHL.y +YHL.height/2+ 35);                    
                 }
                 break;
             case 3:
