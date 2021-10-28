@@ -296,7 +296,7 @@ window.onload = function() {
                 if(answer==wordLearning.Chinese){
                     wordsLearned.push(wordLearning);
                     wordLearning = wordsUnLearned.pop();
-                } else{
+                } else if(answer){
                     alert("答案错误，正确答案是"+wordLearning.Chinese);
                 }
             }else if (pos.x >= YBH.x && pos.x < YBH.x + YBH.width &&
@@ -307,10 +307,31 @@ window.onload = function() {
             }
         } else if (gamemode == 3) {
             var pos = getMousePos(canvas, e);
-            if (pos.x >= FHZCD.x && pos.x < FHZCD.x + FHZCD.width &&
-                pos.y >= FHZCD.y && pos.y < FHZCD.y + FHZCD.height) {
-                gamemode = 0;
-                resizeCanvas();
+            if (gameover){
+                if (pos.x >= FHZCD.x && pos.x < FHZCD.x + FHZCD.width &&
+                    pos.y >= FHZCD.y && pos.y < FHZCD.y + FHZCD.height) {
+                    gamemode = 0;
+                    gameover = 0;
+                    resizeCanvas();
+                }
+            } else if (pos.x >= YHL.x && pos.x < YHL.x + YHL.width &&
+                pos.y >= YHL.y && pos.y < YHL.y + YHL.height) {
+                wordsLearned.push(wordLearning);
+                wordLearning = wordsUnLearned.pop();
+            } else if (pos.x >= TJ.x && pos.x < TJ.x + TJ.width &&
+                pos.y >= TJ.y && pos.y < TJ.y + TJ.height) {
+                answer = prompt("请输入英文");
+                if(answer==wordLearning.English){
+                    wordsLearned.push(wordLearning);
+                    wordLearning = wordsUnLearned.pop();
+                } else if(answer){
+                    alert("答案错误，正确答案是"+wordLearning.English);
+                }
+            }else if (pos.x >= YBH.x && pos.x < YBH.x + YBH.width &&
+                pos.y >= YBH.y && pos.y < YBH.y + YBH.height) {
+                alert(wordLearning.English);
+                wordsUnLearned.unshift(wordLearning);
+                wordLearning = wordsUnLearned.pop();
             }
         } else {
 
