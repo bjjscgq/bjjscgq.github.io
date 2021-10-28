@@ -174,7 +174,7 @@ window.onload = function() {
                     x: 20,
                     y: 86+28+parseInt($(window).get(0).innerHeight/10)*(words.length+1),
                     width: canvas.width - 40,
-                    height: (canvas.height - 100) / 3 - 10
+                    height: 200
                 };//返回主菜单
                 context.fillStyle = "black";
                 context.fillRect(FHZCD.x, FHZCD.y, FHZCD.width, FHZCD.height);
