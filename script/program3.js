@@ -301,7 +301,7 @@ window.onload = function() {
                 pos.y >= YBH.y && pos.y < YBH.y + YBH.height) {
                 alert(wordLearning.Chinese);
                 wordsUnLearned.unshift(wordLearning);
-                wordsLearning = wordsUnLearned.pop();
+                wordLearning = wordsUnLearned.pop();
             }
         } else if (gamemode == 3) {
             var pos = getMousePos(canvas, e);
