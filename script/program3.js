@@ -65,6 +65,18 @@ window.onload = function() {
         width: (canvas.width - 40) / 4,
         height: (canvas.height - 100) / 3 - 10
     }; //爷会了
+    var TJ = {
+        x: canvas.width / 2-((canvas.width - 40) / 2-20)/2,
+        y: 86 + 2 * (YYH.height + 20),
+        width: (canvas.width - 40) / 2-20,
+        height: (canvas.height - 100) / 3 - 10
+    }; //提交
+    var YBH = {
+        x: canvas.width - 20 - (canvas.width - 40) / 4,
+        y: 86 + 2 * (YYH.height + 20),
+        width: (canvas.width - 40) / 4,
+        height: (canvas.height - 100) / 3 - 10
+    }; //提交
     var FHZCD;
     var gameover = 0;
     //游戏平面
@@ -198,9 +210,13 @@ window.onload = function() {
                     context.fillText(wordLearning.English, (canvas.width - 25 * (wordLearning.English.length)) / 2, 86 + 28);
                     context.fillStyle = "black";
                     context.fillRect(YHL.x, YHL.y, YHL.width, YHL.height);
+                    context.fillRect(TJ.x, TJ.y, TJ.width, TJ.height);
+                    context.fillRect(YBH.x, YBH.y, YBH.width, YBH.height);
                     context.fillStyle = "white";
                     context.font = "100px 幼圆";
                     context.fillText("爷会了", YHL.x + YHL.width / 2 - 50 * 3, YHL.y + YHL.height / 2 + 35);
+                    context.fillText("提交", TJ.x + TJ.width / 2 - 50 * 3, TJ.y + TJ.height / 2 + 35);
+                    context.fillText("爷不会", YBH.x + YBH.width / 2 - 50 * 3, YBH.y + YBH.height / 2 + 35);
                 }
                 break;
             case 3:
