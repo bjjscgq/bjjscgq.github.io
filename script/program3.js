@@ -67,7 +67,9 @@ window.onload = function() {
         height: canvas.height - 66
     };
     //YYH单词序号
-    var indexYYH;
+    var indexYYH = 0;
+    var indexHYY = 0;
+    var wordLearning;
     //初始化游戏，监听鼠标
     function init() {
         canvas.addEventListener("mousemove", onMouseMove); //鼠标移动
@@ -166,7 +168,6 @@ window.onload = function() {
                 context.fillText("返回主菜单", canvas.width / 2 - 250, FHZCD.y +FHZCD.height/2+ 35);
                 break;
             case 2:
-                wordsArraySorted = words.sort(function() { return 0.5 - Math.random(); });
                 if(wordsUnLearned.length==0){
                     context.fillStyle = "black";
                     context.font = "24px 幼圆";    
@@ -182,6 +183,11 @@ window.onload = function() {
                     context.fillStyle = "white";
                     context.font = "100px 幼圆";
                     context.fillText("返回主菜单", canvas.width / 2 - 250, FHZCD.y +FHZCD.height/2+ 35);
+                }
+                else{
+                    context.fillStyle = "black";
+                    context.font = "24px 幼圆";    
+                    context.fillText(wordLearning.English, canvas.width / 2 - 12*(wordLearning.English.length), 86+28);
                 }
                 break;
             case 3:
@@ -221,9 +227,19 @@ window.onload = function() {
             } else if (pos.x >= YYH.x && pos.x < YYH.x + YYH.width &&
                 pos.y >= YYH.y && pos.y < YYH.y + YYH.height) {
                 gamemode = 2;
+                wordsArraySorted = words.sort(function() { return 0.5 - Math.random(); });
+                for(var i = 0; i<30;i++){
+                    wordsUnLearned[i] = wordsArraySorted[indexYYH++];
+                }
+                wordLearning = wordsUnLearned.pop();
             } else if (pos.x >= HYY.x && pos.x < HYY.x + HYY.width &&
                 pos.y >= HYY.y && pos.y < HYY.y + HYY.height) {
                 gamemode = 3;
+                wordsArraySorted = words.sort(function() { return 0.5 - Math.random(); });
+                for(var i = 0; i<30;i++){
+                    wordsUnLearned[i] = wordsArraySorted[indexHYY++];
+                }
+                wordLearning = wordsUnLearned.pop();
             }
         } else if (gamemode == 1) {
             var pos = getMousePos(canvas, e);
@@ -233,6 +249,13 @@ window.onload = function() {
                 resizeCanvas();
             }
         } else if (gamemode == 2) {
+            var pos = getMousePos(canvas, e);
+            if (pos.x >= FHZCD.x && pos.x < FHZCD.x + FHZCD.width &&
+                pos.y >= FHZCD.y && pos.y < FHZCD.y + FHZCD.height) {
+                gamemode = 0;
+                resizeCanvas();
+            }
+        } else if (gamemode == 3) {
             var pos = getMousePos(canvas, e);
             if (pos.x >= FHZCD.x && pos.x < FHZCD.x + FHZCD.width &&
                 pos.y >= FHZCD.y && pos.y < FHZCD.y + FHZCD.height) {
