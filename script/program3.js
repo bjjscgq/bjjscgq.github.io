@@ -186,8 +186,8 @@ window.onload = function() {
                 }
                 else{
                     context.fillStyle = "black";
-                    context.font = "24px 幼圆";    
-                    context.fillText(wordLearning.English, canvas.width / 2 - 12*(wordLearning.English.length), 86+28);
+                    context.font = "50px 幼圆";    
+                    context.fillText(wordLearning.English, canvas.width / 2 - 25*(wordLearning.English.length), 86+28);
                 }
                 break;
             case 3:
