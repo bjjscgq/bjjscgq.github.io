@@ -186,6 +186,7 @@ window.onload = function() {
                 break;
             case2:
                 wordsArraySorted = words.sort(function() { return 0.5 - Math.random(); });
+                alert(wordsUnLearned.length);
                 if(wordsUnLearned.length==0){
                     context.fillStyle = "black";
                     context.font = "24px 幼圆";    
@@ -201,8 +202,8 @@ window.onload = function() {
                     context.fillStyle = "white";
                     context.font = "100px 幼圆";
                     context.fillText("返回主菜单", canvas.width / 2 - 250, FHZCD.y +FHZCD.height/2+ 25);
-                    break;
                 }
+                break;
         }
     }
 
