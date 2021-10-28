@@ -239,14 +239,16 @@ window.onload = function() {
             } else if (pos.x >= YYH.x && pos.x < YYH.x + YYH.width &&
                 pos.y >= YYH.y && pos.y < YYH.y + YYH.height) {
                 gamemode = 2;
-                for (var i = 0; i < Math.min(30, wordsArraySorted.length-indexYYH); i++) {
+                var left = wordsArraySorted.length-indexYYH;
+                for (var i = 0; i < Math.min(30, left); i++) {
                     wordsUnLearned[i] = wordsArraySorted[indexYYH++];
                 }
                 wordLearning = wordsUnLearned.pop();
             } else if (pos.x >= HYY.x && pos.x < HYY.x + HYY.width &&
                 pos.y >= HYY.y && pos.y < HYY.y + HYY.height) {
                 gamemode = 3;
-                for (var i = 0; i < Math.min(30, wordsArraySorted.length-indexHYY); i++) {
+                var left = wordsArraySorted.length-indexHYY;
+                for (var i = 0; i < Math.min(30, left); i++) {
                     wordsUnLearned[i] = wordsArraySorted[indexHYY++];
                 }
                 wordLearning = wordsUnLearned.pop();
