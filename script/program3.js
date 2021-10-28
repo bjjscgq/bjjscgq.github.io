@@ -161,9 +161,9 @@ window.onload = function() {
                 context.fillRect(HYY.x, HYY.y, HYY.width, HYY.height);
                 context.fillStyle = "white";
                 context.font = "100px 幼圆";
-                context.fillText("看题库", canvas.width / 2 - 150, KTK.y + KTK.height/2+ 30);
-                context.fillText("英译汉", canvas.width / 2 - 150, YYH.y + YYH.height/2+ 30);
-                context.fillText("汉译英", canvas.width / 2 - 150, HYY.y + HYY.height/2+ 30);
+                context.fillText("看题库", canvas.width / 2 - 150, KTK.y + KTK.height/2+ 35);
+                context.fillText("英译汉", canvas.width / 2 - 150, YYH.y + YYH.height/2+ 35);
+                context.fillText("汉译英", canvas.width / 2 - 150, HYY.y + HYY.height/2+ 35);
                 break;
             case 1:
                 context.fillStyle = "black";
@@ -182,7 +182,7 @@ window.onload = function() {
                 context.fillRect(FHZCD.x, FHZCD.y, FHZCD.width, FHZCD.height);
                 context.fillStyle = "white";
                 context.font = "100px 幼圆";
-                context.fillText("返回主菜单", canvas.width / 2 - 250, FHZCD.y +FHZCD.height/2+ 30);
+                context.fillText("返回主菜单", canvas.width / 2 - 250, FHZCD.y +FHZCD.height/2+ 35);
                 break;
             case 2:
                 wordsArraySorted = words.sort(function() { return 0.5 - Math.random(); });
@@ -200,7 +200,7 @@ window.onload = function() {
                     context.fillRect(FHZCD.x, FHZCD.y, FHZCD.width, FHZCD.height);
                     context.fillStyle = "white";
                     context.font = "100px 幼圆";
-                    context.fillText("返回主菜单", canvas.width / 2 - 250, FHZCD.y +FHZCD.height/2+ 30);
+                    context.fillText("返回主菜单", canvas.width / 2 - 250, FHZCD.y +FHZCD.height/2+ 35);
                 }
                 break;
         }
@@ -226,6 +226,13 @@ window.onload = function() {
                 gamemode = 3;
             }
         } else if (gamemode == 1) {
+            var pos = getMousePos(canvas, e);
+            if (pos.x >= FHZCD.x && pos.x < FHZCD.x + FHZCD.width &&
+                pos.y >= FHZCD.y && pos.y < FHZCD.y + FHZCD.height) {
+                gamemode = 0;
+                resizeCanvas();
+            }
+        } else if (gamemode == 2) {
             var pos = getMousePos(canvas, e);
             if (pos.x >= FHZCD.x && pos.x < FHZCD.x + FHZCD.width &&
                 pos.y >= FHZCD.y && pos.y < FHZCD.y + FHZCD.height) {
