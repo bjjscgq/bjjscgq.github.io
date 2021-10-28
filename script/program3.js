@@ -260,11 +260,13 @@ window.onload = function() {
             } 
         } else if (gamemode == 2) {
             var pos = getMousePos(canvas, e);
-            if (pos.x >= FHZCD.x && pos.x < FHZCD.x + FHZCD.width &&
+            try{if (pos.x >= FHZCD.x && pos.x < FHZCD.x + FHZCD.width &&
                 pos.y >= FHZCD.y && pos.y < FHZCD.y + FHZCD.height) {
                 gamemode = 0;
                 resizeCanvas();
-            } else if (pos.x >= YHL.x && pos.x < YHL.x + YHL.width &&
+            }}
+            catch{}
+            if (pos.x >= YHL.x && pos.x < YHL.x + YHL.width &&
                 pos.y >= YHL.y && pos.y < YHL.y + YHL.height) {
                 wordsLearned.push(wordLearning);
                 wordLearning = wordsUnLearned.pop();
