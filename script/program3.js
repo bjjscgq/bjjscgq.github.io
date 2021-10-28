@@ -176,7 +176,7 @@ window.onload = function() {
                 context.fillText("返回主菜单", canvas.width / 2 - 250, FHZCD.y + FHZCD.height / 2 + 35);
                 break;
             case 2:
-                if (wordsUnLearned.length == 0) {
+                if ((wordsUnLearned.length == 0)&&(!wordLearning)) {
                     context.fillStyle = "black";
                     context.font = "24px 幼圆";
                     context.fillText("这组的30个背完了", canvas.width / 2 - 12 * 9, 86 + 28);
@@ -239,14 +239,14 @@ window.onload = function() {
             } else if (pos.x >= YYH.x && pos.x < YYH.x + YYH.width &&
                 pos.y >= YYH.y && pos.y < YYH.y + YYH.height) {
                 gamemode = 2;
-                for (var i = 0; i < 30; i++) {
+                for (var i = 0; i < Math.min(30, wordsArraySorted.length-indexYYH); i++) {
                     wordsUnLearned[i] = wordsArraySorted[indexYYH++];
                 }
                 wordLearning = wordsUnLearned.pop();
             } else if (pos.x >= HYY.x && pos.x < HYY.x + HYY.width &&
                 pos.y >= HYY.y && pos.y < HYY.y + HYY.height) {
                 gamemode = 3;
-                for (var i = 0; i < 30; i++) {
+                for (var i = 0; i < Math.min(30, wordsArraySorted.length-indexHYY); i++) {
                     wordsUnLearned[i] = wordsArraySorted[indexHYY++];
                 }
                 wordLearning = wordsUnLearned.pop();
