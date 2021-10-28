@@ -37,6 +37,8 @@ window.onload = function() {
     var fps = 0; //每秒传输帧数
     var gamemode = 0; //游戏模式，0表示主菜单，1表示看题库，2表示英译汉，3表示汉译英
     var wordsArraySorted;// = words.sort(function() { return 0.5 - Math.random(); });
+    var wordsLearned = new Array;
+    var wordsUnLearned = new Array;
     /*var itemArray = new Array;
     for (var i = 0; i < 54; i++)
         itemArray[i] = i + 1;
@@ -83,8 +85,8 @@ window.onload = function() {
         width: canvas.width - 2,
         height: canvas.height - 66
     };
-
-
+    //YYH单词序号
+    var indexYYH;
     //初始化游戏，监听鼠标
     function init() {
         canvas.addEventListener("mousemove", onMouseMove); //鼠标移动
@@ -184,6 +186,23 @@ window.onload = function() {
                 break;
             case2:
                 wordsArraySorted = words.sort(function() { return 0.5 - Math.random(); });
+                if(wordsUnLearned.length==0){
+                    context.fillStyle = "black";
+                    context.font = "24px 幼圆";    
+                    context.fillText("这组的30个背完了", canvas.width / 2 - 12*9, 86+28);
+                    FHZCD = {
+                        x: 20,
+                        y: 86 + 2*(YYH.height + 20),
+                        width: canvas.width - 40,
+                        height: 200
+                    };//返回主菜单
+                    context.fillStyle = "black";
+                    context.fillRect(FHZCD.x, FHZCD.y, FHZCD.width, FHZCD.height);
+                    context.fillStyle = "white";
+                    context.font = "100px 幼圆";
+                    context.fillText("返回主菜单", canvas.width / 2 - 250, FHZCD.y +FHZCD.height/2+ 50);
+                    break;
+                }
         }
     }
 
