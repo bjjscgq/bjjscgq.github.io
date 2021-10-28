@@ -207,7 +207,7 @@ window.onload = function() {
                 } else {
                     context.fillStyle = "black";
                     context.font = "50px TimesNewRoman";
-                    context.fillText(wordLearning.English, (canvas.width - 20 * (wordLearning.English.length)) / 2, 86 + 28);
+                    context.fillText(wordLearning.English, (canvas.width - 22 * (wordLearning.English.length)) / 2, 86 + 28);
                     context.fillStyle = "#fff";
                     context.font = "24px 宋体";
                     context.fillText("本轮剩余单词："+(wordsUnLearned.length+1), canvas.width-10-24*8, 30);
