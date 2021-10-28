@@ -66,6 +66,7 @@ window.onload = function() {
         height: (canvas.height - 100) / 3 - 10
     }; //爷会了
     var FHZCD;
+    var gameover = 0;
     //游戏平面
     var level = {
         x: 1,
@@ -179,6 +180,7 @@ window.onload = function() {
                     context.fillStyle = "black";
                     context.font = "24px 幼圆";
                     context.fillText("这组的30个背完了", canvas.width / 2 - 12 * 9, 86 + 28);
+                    gameover = 1;
                     FHZCD = {
                         x: 20,
                         y: 86 + 2 * (YYH.height + 20),
@@ -254,18 +256,19 @@ window.onload = function() {
             if (pos.x >= FHZCD.x && pos.x < FHZCD.x + FHZCD.width &&
                 pos.y >= FHZCD.y && pos.y < FHZCD.y + FHZCD.height) {
                 gamemode = 0;
+                gameover = 0;
                 resizeCanvas();
             }
         } else if (gamemode == 2) {
             var pos = getMousePos(canvas, e);
-            try {
+            if (gameover){
                 if (pos.x >= FHZCD.x && pos.x < FHZCD.x + FHZCD.width &&
                     pos.y >= FHZCD.y && pos.y < FHZCD.y + FHZCD.height) {
                     gamemode = 0;
+                    gameover = 0;
                     resizeCanvas();
                 }
-            } catch {}
-            if (pos.x >= YHL.x && pos.x < YHL.x + YHL.width &&
+            } else if (pos.x >= YHL.x && pos.x < YHL.x + YHL.width &&
                 pos.y >= YHL.y && pos.y < YHL.y + YHL.height) {
                 wordsLearned.push(wordLearning);
                 wordLearning = wordsUnLearned.pop();
