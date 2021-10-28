@@ -296,6 +296,8 @@ window.onload = function() {
                 if(answer==wordLearning.Chinese){
                     wordsLearned.push(wordLearning);
                     wordLearning = wordsUnLearned.pop();
+                } else{
+                    alert("答案错误，正确答案是"+wordLearning.Chinese);
                 }
             }else if (pos.x >= YBH.x && pos.x < YBH.x + YBH.width &&
                 pos.y >= YBH.y && pos.y < YBH.y + YBH.height) {
