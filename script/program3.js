@@ -39,25 +39,6 @@ window.onload = function() {
     var wordsArraySorted;// = words.sort(function() { return 0.5 - Math.random(); });
     var wordsLearned = new Array;
     var wordsUnLearned = new Array;
-    /*var itemArray = new Array;
-    for (var i = 0; i < 54; i++)
-        itemArray[i] = i + 1;
-    itemArraySorted = itemArray.sort(function() { return 0.5 - Math.random(); });
-    var goldCoin = {
-        img: gold,
-        width: squareWidth,
-        ids: itemArraySorted.slice(0, 16)
-    };
-    var silverCoin = {
-        img: silver,
-        width: parseInt(squareWidth / 3 * 2),
-        ids: itemArraySorted.slice(16, 44)
-    };
-    var noCoin = {
-        img: square,
-        width: squareWidth,
-        ids: itemArraySorted.slice(44, 55)
-    };*/
     var KTK = {
         x: 20,
         y: 86,
@@ -203,6 +184,25 @@ window.onload = function() {
                     context.fillText("返回主菜单", canvas.width / 2 - 250, FHZCD.y +FHZCD.height/2+ 35);
                 }
                 break;
+            case 3:
+                wordsArraySorted = words.sort(function() { return 0.5 - Math.random(); });
+                if(wordsUnLearned.length==0){
+                    context.fillStyle = "black";
+                    context.font = "24px 幼圆";    
+                    context.fillText("这组的30个背完了", canvas.width / 2 - 12*9, 86+28);
+                    FHZCD = {
+                        x: 20,
+                        y: 86 + 2*(YYH.height + 20),
+                        width: canvas.width - 40,
+                        height: (canvas.height - 100) / 3 - 10
+                    };//返回主菜单
+                    context.fillStyle = "black";
+                    context.fillRect(FHZCD.x, FHZCD.y, FHZCD.width, FHZCD.height);
+                    context.fillStyle = "white";
+                    context.font = "100px 幼圆";
+                    context.fillText("返回主菜单", canvas.width / 2 - 250, FHZCD.y +FHZCD.height/2+ 35);
+                }
+                break;                
         }
     }
 
@@ -240,54 +240,7 @@ window.onload = function() {
                 resizeCanvas();
             }
         } else{
-            var pos = getMousePos(canvas, e);
-            var X = parseInt((pos.x - 1) / 58);
-            var Y = parseInt((pos.y - 65) / 58);
-            var id = X * 5 + Y;
-            var ableIds;
-            if ([1, 2, 3].includes(peopleId))
-                ableIds = [peopleId + 1, peopleId - 1, peopleId + 5];
-            else if ([5, 10, 15, 20, 25, 30, 35, 40, 45].includes(peopleId))
-                ableIds = [peopleId + 1, peopleId + 5, peopleId - 5];
-            else if ([51, 52, 53].includes(peopleId))
-                ableIds = [peopleId + 1, peopleId - 1, peopleId - 5];
-            else if ([9, 14, 19, 24, 29, 34, 39, 44, 49].includes(peopleId))
-                ableIds = [peopleId - 1, peopleId + 5, peopleId - 5];
-            else if (peopleId == 0)
-                ableIds = [peopleId + 1, peopleId + 5];
-            else if (peopleId == 4)
-                ableIds = [peopleId - 1, peopleId + 5];
-            else if (peopleId == 50)
-                ableIds = [peopleId + 1, peopleId - 5];
-            else if (peopleId == 54)
-                ableIds = [peopleId - 1, peopleId - 5];
-            else
-                ableIds = [peopleId + 1, peopleId - 1, peopleId + 5, peopleId - 5];
-            var union = goldCoin.ids.concat(silverCoin.ids.filter(v => !goldCoin.ids.includes(v)));
-            union = union.concat(noCoin.ids.filter(v => !union.includes(v)));
-            var intersection = union.filter(v => ableIds.includes(v));
-            var index;
-            if (goldCoin.ids.includes(id) && ableIds.includes(id)) {
-                index = goldCoin.ids.findIndex(e => e == id);
-                goldCoin.ids.splice(index, 1);
-                dollar += 50;
-                step = step - 1;
-                peopleId = id;
-            } else if (silverCoin.ids.includes(id) && ableIds.includes(id)) {
-                index = silverCoin.ids.findIndex(e => e == id);
-                silverCoin.ids.splice(index, 1);
-                dollar += 10;
-                step = step - 1;
-                peopleId = id;
-            } else if (noCoin.ids.includes(id) && ableIds.includes(id)) {
-                index = noCoin.ids.findIndex(e => e == id);
-                noCoin.ids.splice(index, 1);
-                step = step - 1;
-                peopleId = id;
-            }
-            if ((step == 0) || (!intersection.length)) {
-                gamemode = 1;
-            }
+            
         }
     }
 
