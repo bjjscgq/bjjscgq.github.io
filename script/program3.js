@@ -210,7 +210,7 @@ window.onload = function() {
                     context.fillText(wordLearning.English, (canvas.width - 25 * (wordLearning.English.length)) / 2, 86 + 28);
                     context.fillStyle = "#fff";
                     context.font = "24px 宋体";
-                    context.fillText("本轮剩余单词："+(wordsUnLearned.length+1), canvas.width-10-24*7, 30);
+                    context.fillText("本轮剩余单词："+(wordsUnLearned.length+1), canvas.width-10-24*8, 30);
                     context.fillStyle = "black";
                     context.fillRect(YHL.x, YHL.y, YHL.width, YHL.height);
                     context.fillRect(TJ.x, TJ.y, TJ.width, TJ.height);
@@ -245,7 +245,7 @@ window.onload = function() {
                     context.fillText(wordLearning.Chinese, (canvas.width - 25 * (wordLearning.Chinese.length)), 86 + 28);
                     context.fillStyle = "#fff";
                     context.font = "24px 宋体";
-                    context.fillText("本轮剩余单词："+(wordsUnLearned.length+1), canvas.width-10-24*7, 30);
+                    context.fillText("本轮剩余单词："+(wordsUnLearned.length+1), canvas.width-10-24*8, 30);
                     context.fillStyle = "black";
                     context.fillRect(YHL.x, YHL.y, YHL.width, YHL.height);
                     context.fillRect(TJ.x, TJ.y, TJ.width, TJ.height);
