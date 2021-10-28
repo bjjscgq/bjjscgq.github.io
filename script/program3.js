@@ -242,7 +242,7 @@ window.onload = function() {
                 } else {
                     context.fillStyle = "black";
                     context.font = "50px 幼圆";
-                    context.fillText(wordLearning.Chinese, (canvas.width - 25 * (wordLearning.Chinese.length)), 86 + 28);
+                    context.fillText(wordLearning.Chinese, (canvas.width/2 - 25 * wordLearning.Chinese.length), 86 + 28);
                     context.fillStyle = "#fff";
                     context.font = "24px 宋体";
                     context.fillText("本轮剩余单词："+(wordsUnLearned.length+1), canvas.width-10-24*8, 30);
