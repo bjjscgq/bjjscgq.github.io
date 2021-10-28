@@ -45,7 +45,6 @@ window.onload = function() {
         width: canvas.width - 40,
         height: (canvas.height - 100) / 3 - 10
     };//看题库
-
     var YYH = {
         x: 20,
         y: 86 + KTK.height + 20,
@@ -58,6 +57,12 @@ window.onload = function() {
         width: canvas.width - 40,
         height: (canvas.height - 100) / 3 - 10
     };//汉译英
+    var YHL = {
+        x: 20,
+        y: 86 + 2*(YYH.height + 20),
+        width: (canvas.width - 40)/4,
+        height: (canvas.height - 100) / 3 - 10        
+    };//爷会了
     var FHZCD;
     //游戏平面
     var level = {
@@ -187,7 +192,7 @@ window.onload = function() {
                 else{
                     context.fillStyle = "black";
                     context.font = "50px TimesNewRoman";    
-                    context.fillText(wordLearning.English, canvas.width / 2 - 25*(wordLearning.English.length), 86+28);
+                    context.fillText(wordLearning.English, (canvas.width - 25*(wordLearning.English.length))/2, 86+28);
                 }
                 break;
             case 3:
