@@ -220,10 +220,11 @@ window.onload = function() {
                 }
                 break;
             case 3:
-                if (wordsUnLearned.length == 0) {
+                if ((wordsUnLearned.length == 0)&&(!wordLearning)) {
                     context.fillStyle = "black";
                     context.font = "24px 幼圆";
                     context.fillText("这组的30个背完了", canvas.width / 2 - 12 * 9, 86 + 28);
+                    gameover = 1;
                     FHZCD = {
                         x: 20,
                         y: 86 + 2 * (YYH.height + 20),
@@ -235,6 +236,19 @@ window.onload = function() {
                     context.fillStyle = "white";
                     context.font = "100px 幼圆";
                     context.fillText("返回主菜单", canvas.width / 2 - 250, FHZCD.y + FHZCD.height / 2 + 35);
+                } else {
+                    context.fillStyle = "black";
+                    context.font = "50px 幼圆";
+                    context.fillText(wordLearning.Chinese, (canvas.width - 25 * (wordLearning.Chinese.length)) / 2, 86 + 28);
+                    context.fillStyle = "black";
+                    context.fillRect(YHL.x, YHL.y, YHL.width, YHL.height);
+                    context.fillRect(TJ.x, TJ.y, TJ.width, TJ.height);
+                    context.fillRect(YBH.x, YBH.y, YBH.width, YBH.height);
+                    context.fillStyle = "white";
+                    context.font = "100px 幼圆";
+                    context.fillText("爷会了", YHL.x + YHL.width / 2 - 50 * 3, YHL.y + YHL.height / 2 + 35);
+                    context.fillText("提交", TJ.x + TJ.width / 2 - 50 * 2, TJ.y + TJ.height / 2 + 35);
+                    context.fillText("爷不会", YBH.x + YBH.width / 2 - 50 * 3, YBH.y + YBH.height / 2 + 35);
                 }
                 break;
         }
