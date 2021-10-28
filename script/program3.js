@@ -215,7 +215,7 @@ window.onload = function() {
                     context.fillStyle = "white";
                     context.font = "100px 幼圆";
                     context.fillText("爷会了", YHL.x + YHL.width / 2 - 50 * 3, YHL.y + YHL.height / 2 + 35);
-                    context.fillText("提交", TJ.x + TJ.width / 2 - 50 * 3, TJ.y + TJ.height / 2 + 35);
+                    context.fillText("提交", TJ.x + TJ.width / 2 - 50 * 2, TJ.y + TJ.height / 2 + 35);
                     context.fillText("爷不会", YBH.x + YBH.width / 2 - 50 * 3, YBH.y + YBH.height / 2 + 35);
                 }
                 break;
@@ -299,7 +299,9 @@ window.onload = function() {
                 }
             }else if (pos.x >= YBH.x && pos.x < YBH.x + YBH.width &&
                 pos.y >= YBH.y && pos.y < YBH.y + YBH.height) {
-
+                alert(wordLearning.Chinese);
+                wordsUnLearned.unshift(wordLearning);
+                wordsLearning = wordsUnLearned.pop();
             }
         } else if (gamemode == 3) {
             var pos = getMousePos(canvas, e);
