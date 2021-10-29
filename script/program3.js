@@ -217,7 +217,14 @@ window.onload = function() {
                     context.fillRect(YBH.x, YBH.y, YBH.width, YBH.height);
                     context.fillStyle = "white";
                     context.font = "100px 幼圆";
-                    context.fillText("爷会了", YHL.x + YHL.width / 2 - 50 * 3, YHL.y + YHL.height / 2 + 35);
+                    if(YHL.width>YHL.height){
+                        context.fillText("爷会了", YHL.x + YHL.width / 2 - 50 * 3, YHL.y + YHL.height / 2 + 35);
+                    }
+                    else{
+                        context.fillText("爷", YHL.x + YHL.width / 2 - 50, YHL.y + YHL.height / 2 + 35-100);
+                        context.fillText("会", YHL.x + YHL.width / 2 - 50, YHL.y + YHL.height / 2 + 35);
+                        context.fillText("了", YHL.x + YHL.width / 2 - 50, YHL.y + YHL.height / 2 + 35+100);
+                    }
                     context.fillText("提交", TJ.x + TJ.width / 2 - 50 * 2, TJ.y + TJ.height / 2 + 35);
                     context.fillText("爷不会", YBH.x + YBH.width / 2 - 50 * 3, YBH.y + YBH.height / 2 + 35);
                 }
