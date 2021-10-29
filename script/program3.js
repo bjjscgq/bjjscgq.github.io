@@ -66,9 +66,9 @@ window.onload = function() {
         height: (canvas.height - 100) / 3 - 10
     }; //爷会了
     var TJ = {
-        x: canvas.width / 2-((canvas.width - 40) / 2-20)/2,
+        x: canvas.width / 2 - ((canvas.width - 40) / 2 - 20) / 2,
         y: 86 + 2 * (YYH.height + 20),
-        width: (canvas.width - 40) / 2-20,
+        width: (canvas.width - 40) / 2 - 20,
         height: (canvas.height - 100) / 3 - 10
     }; //提交
     var YBH = {
@@ -188,7 +188,7 @@ window.onload = function() {
                 context.fillText("返回主菜单", canvas.width / 2 - 250, FHZCD.y + FHZCD.height / 2 + 35);
                 break;
             case 2:
-                if ((wordsUnLearned.length == 0)&&(!wordLearning)) {
+                if ((wordsUnLearned.length == 0) && (!wordLearning)) {
                     context.fillStyle = "black";
                     context.font = "24px 幼圆";
                     context.fillText("这组的30个背完了", canvas.width / 2 - 12 * 9, 86 + 28);
@@ -210,27 +210,37 @@ window.onload = function() {
                     context.fillText(wordLearning.English, (canvas.width - 22 * (wordLearning.English.length)) / 2, 86 + 28);
                     context.fillStyle = "#fff";
                     context.font = "24px 宋体";
-                    context.fillText("本轮剩余单词："+(wordsUnLearned.length+1), canvas.width-10-24*8, 30);
+                    context.fillText("本轮剩余单词：" + (wordsUnLearned.length + 1), canvas.width - 10 - 24 * 8, 30);
                     context.fillStyle = "black";
                     context.fillRect(YHL.x, YHL.y, YHL.width, YHL.height);
                     context.fillRect(TJ.x, TJ.y, TJ.width, TJ.height);
                     context.fillRect(YBH.x, YBH.y, YBH.width, YBH.height);
                     context.fillStyle = "white";
                     context.font = "100px 幼圆";
-                    if(YHL.width>YHL.height){
+                    if (YHL.width > YHL.height) {
                         context.fillText("爷会了", YHL.x + YHL.width / 2 - 50 * 3, YHL.y + YHL.height / 2 + 35);
-                    }
-                    else{
-                        context.fillText("爷", YHL.x + YHL.width / 2 - 50, YHL.y + YHL.height / 2 + 35-100);
+                    } else {
+                        context.fillText("爷", YHL.x + YHL.width / 2 - 50, YHL.y + YHL.height / 2 + 35 - 100);
                         context.fillText("会", YHL.x + YHL.width / 2 - 50, YHL.y + YHL.height / 2 + 35);
-                        context.fillText("了", YHL.x + YHL.width / 2 - 50, YHL.y + YHL.height / 2 + 35+100);
+                        context.fillText("了", YHL.x + YHL.width / 2 - 50, YHL.y + YHL.height / 2 + 35 + 100);
                     }
-                    context.fillText("提交", TJ.x + TJ.width / 2 - 50 * 2, TJ.y + TJ.height / 2 + 35);
-                    context.fillText("爷不会", YBH.x + YBH.width / 2 - 50 * 3, YBH.y + YBH.height / 2 + 35);
+                    if (TJ.width > TJ.height) {
+                        context.fillText("提交", TJ.x + TJ.width / 2 - 50 * 2, TJ.y + TJ.height / 2 + 35);
+                    } else {
+                        context.fillText("提", TJ.x + TJ.width / 2 - 50, TJ.y + TJ.height / 2 + 35 - 50);
+                        context.fillText("交", TJ.x + TJ.width / 2 - 50, TJ.y + TJ.height / 2 + 35 + 50);
+                    }
+                    if (YBH.width > YBH.height) {
+                        context.fillText("爷不会", YBH.x + YBH.width / 2 - 50 * 3, YBH.y + YBH.height / 2 + 35);
+                    } else {
+                        context.fillText("爷", YBH.x + YBH.width / 2 - 50, YBH.y + YBH.height / 2 + 35 - 100);
+                        context.fillText("不", YBH.x + YBH.width / 2 - 50, YBH.y + YBH.height / 2 + 35);
+                        context.fillText("会", YBH.x + YBH.width / 2 - 50, YBH.y + YBH.height / 2 + 35 + 100);
+                    }
                 }
                 break;
             case 3:
-                if ((wordsUnLearned.length == 0)&&(!wordLearning)) {
+                if ((wordsUnLearned.length == 0) && (!wordLearning)) {
                     context.fillStyle = "black";
                     context.font = "24px 幼圆";
                     context.fillText("这组的30个背完了", canvas.width / 2 - 12 * 9, 86 + 28);
@@ -249,19 +259,36 @@ window.onload = function() {
                 } else {
                     context.fillStyle = "black";
                     context.font = "50px 幼圆";
-                    context.fillText(wordLearning.Chinese, (canvas.width/2 - 25 * wordLearning.Chinese.length), 86 + 28);
+                    context.fillText(wordLearning.Chinese, (canvas.width / 2 - 25 * wordLearning.Chinese.length), 86 + 28);
                     context.fillStyle = "#fff";
                     context.font = "24px 宋体";
-                    context.fillText("本轮剩余单词："+(wordsUnLearned.length+1), canvas.width-10-24*8, 30);
+                    context.fillText("本轮剩余单词：" + (wordsUnLearned.length + 1), canvas.width - 10 - 24 * 8, 30);
                     context.fillStyle = "black";
                     context.fillRect(YHL.x, YHL.y, YHL.width, YHL.height);
                     context.fillRect(TJ.x, TJ.y, TJ.width, TJ.height);
                     context.fillRect(YBH.x, YBH.y, YBH.width, YBH.height);
                     context.fillStyle = "white";
                     context.font = "100px 幼圆";
-                    context.fillText("爷会了", YHL.x + YHL.width / 2 - 50 * 3, YHL.y + YHL.height / 2 + 35);
-                    context.fillText("提交", TJ.x + TJ.width / 2 - 50 * 2, TJ.y + TJ.height / 2 + 35);
-                    context.fillText("爷不会", YBH.x + YBH.width / 2 - 50 * 3, YBH.y + YBH.height / 2 + 35);
+                    if (YHL.width > YHL.height) {
+                        context.fillText("爷会了", YHL.x + YHL.width / 2 - 50 * 3, YHL.y + YHL.height / 2 + 35);
+                    } else {
+                        context.fillText("爷", YHL.x + YHL.width / 2 - 50, YHL.y + YHL.height / 2 + 35 - 100);
+                        context.fillText("会", YHL.x + YHL.width / 2 - 50, YHL.y + YHL.height / 2 + 35);
+                        context.fillText("了", YHL.x + YHL.width / 2 - 50, YHL.y + YHL.height / 2 + 35 + 100);
+                    }
+                    if (TJ.width > TJ.height) {
+                        context.fillText("提交", TJ.x + TJ.width / 2 - 50 * 2, TJ.y + TJ.height / 2 + 35);
+                    } else {
+                        context.fillText("提", TJ.x + TJ.width / 2 - 50, TJ.y + TJ.height / 2 + 35 - 50);
+                        context.fillText("交", TJ.x + TJ.width / 2 - 50, TJ.y + TJ.height / 2 + 35 + 50);
+                    }
+                    if (YBH.width > YBH.height) {
+                        context.fillText("爷不会", YBH.x + YBH.width / 2 - 50 * 3, YBH.y + YBH.height / 2 + 35);
+                    } else {
+                        context.fillText("爷", YBH.x + YBH.width / 2 - 50, YBH.y + YBH.height / 2 + 35 - 100);
+                        context.fillText("不", YBH.x + YBH.width / 2 - 50, YBH.y + YBH.height / 2 + 35);
+                        context.fillText("会", YBH.x + YBH.width / 2 - 50, YBH.y + YBH.height / 2 + 35 + 100);
+                    }
                 }
                 break;
         }
@@ -282,7 +309,7 @@ window.onload = function() {
             } else if (pos.x >= YYH.x && pos.x < YYH.x + YYH.width &&
                 pos.y >= YYH.y && pos.y < YYH.y + YYH.height) {
                 gamemode = 2;
-                var left = wordsArraySorted.length-indexYYH;
+                var left = wordsArraySorted.length - indexYYH;
                 for (var i = 0; i < Math.min(30, left); i++) {
                     wordsUnLearned[i] = wordsArraySorted[indexYYH++];
                 }
@@ -290,7 +317,7 @@ window.onload = function() {
             } else if (pos.x >= HYY.x && pos.x < HYY.x + HYY.width &&
                 pos.y >= HYY.y && pos.y < HYY.y + HYY.height) {
                 gamemode = 3;
-                var left = wordsArraySorted.length-indexHYY;
+                var left = wordsArraySorted.length - indexHYY;
                 for (var i = 0; i < Math.min(30, left); i++) {
                     wordsUnLearned[i] = wordsArraySorted[indexHYY++];
                 }
@@ -306,7 +333,7 @@ window.onload = function() {
             }
         } else if (gamemode == 2) {
             var pos = getMousePos(canvas, e);
-            if (gameover){
+            if (gameover) {
                 if (pos.x >= FHZCD.x && pos.x < FHZCD.x + FHZCD.width &&
                     pos.y >= FHZCD.y && pos.y < FHZCD.y + FHZCD.height) {
                     gamemode = 0;
@@ -320,13 +347,13 @@ window.onload = function() {
             } else if (pos.x >= TJ.x && pos.x < TJ.x + TJ.width &&
                 pos.y >= TJ.y && pos.y < TJ.y + TJ.height) {
                 answer = prompt("请输入中文");
-                if(answer==wordLearning.Chinese){
+                if (answer == wordLearning.Chinese) {
                     wordsLearned.push(wordLearning);
                     wordLearning = wordsUnLearned.pop();
-                } else if(answer){
-                    alert("答案错误，正确答案是"+wordLearning.Chinese);
+                } else if (answer) {
+                    alert("答案错误，正确答案是" + wordLearning.Chinese);
                 }
-            }else if (pos.x >= YBH.x && pos.x < YBH.x + YBH.width &&
+            } else if (pos.x >= YBH.x && pos.x < YBH.x + YBH.width &&
                 pos.y >= YBH.y && pos.y < YBH.y + YBH.height) {
                 alert(wordLearning.Chinese);
                 wordsUnLearned.unshift(wordLearning);
@@ -334,7 +361,7 @@ window.onload = function() {
             }
         } else if (gamemode == 3) {
             var pos = getMousePos(canvas, e);
-            if (gameover){
+            if (gameover) {
                 if (pos.x >= FHZCD.x && pos.x < FHZCD.x + FHZCD.width &&
                     pos.y >= FHZCD.y && pos.y < FHZCD.y + FHZCD.height) {
                     gamemode = 0;
@@ -348,13 +375,13 @@ window.onload = function() {
             } else if (pos.x >= TJ.x && pos.x < TJ.x + TJ.width &&
                 pos.y >= TJ.y && pos.y < TJ.y + TJ.height) {
                 answer = prompt("请输入英文");
-                if(answer==wordLearning.English){
+                if (answer == wordLearning.English) {
                     wordsLearned.push(wordLearning);
                     wordLearning = wordsUnLearned.pop();
-                } else if(answer){
-                    alert("答案错误，正确答案是"+wordLearning.English);
+                } else if (answer) {
+                    alert("答案错误，正确答案是" + wordLearning.English);
                 }
-            }else if (pos.x >= YBH.x && pos.x < YBH.x + YBH.width &&
+            } else if (pos.x >= YBH.x && pos.x < YBH.x + YBH.width &&
                 pos.y >= YBH.y && pos.y < YBH.y + YBH.height) {
                 alert(wordLearning.English);
                 wordsUnLearned.unshift(wordLearning);
