@@ -24,6 +24,11 @@ function bigCanvas() {
     $("#program3").attr("height", $(window).get(0).innerHeight * (parseInt(words.length / 10) + 2));
 }
 window.onload = function() {
+    const u = navigator.userAgent;
+    if(u.indexOf("MMWEBSDK")!=-1){
+        $("body").empty();
+        $("body").append($('<div id="weixinTip"><div class="test"><p>请点击右上角↗,选择"在浏览器中打开"</p></div></div>'));
+    }
     //$(window).resize(resizeCanvas);
     //页面加载后先设置一下canvas大小
     resizeCanvas();
