@@ -1,54 +1,275 @@
 <!DOCTYPE html>
 <html lang="cn">
+
 <head>
-	<meta charset="UTF-8">
-	<title>不觉己是春归去</title>
-	<link rel="stylesheet" href="css/style.css">
+    <meta charset="UTF-8">
+    <title>不觉己是春归去</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="script/index.js"></script>
 </head>
+
 <body>
-	<div id="container">
-		<div id="header">
-			<p>联系邮箱<a href="mailto:bjjscgq@163.com">bjjscgq@163.com</a>&nbsp&nbsp&nbsp&nbsp&nbsp<a href="https://space.bilibili.com/395657014">b站不觉己是春归去</a></p>
-		</div>
-		<div id="main">
-			<div id="game">
-				<h3>游戏</h3>
-				<p><a href="game1.html" id="井字棋"><img src="img/棋盘.png" alt=""></a></p>
-				<p><a href="game1.html" id="井字棋">井字棋</a></p>
-				<p><a href="game2.html" id="捡金币"><img src="img/金币.png" alt=""></a></p>
-				<p><a href="game2.html" id="捡金币">捡金币</a></p>
-			</div>
-			<div id="program">
-				<h3>程序</h3>
-				<p>
-					<a href="https://www.bilibili.com/video/BV1xA411J7KQ" target="_blank" id="计算题配套教程">计算题配套教程</a>
-				</p>
-				<p>
-					<a href="spss/index.html" target="_blank" id="SPSS">SPSS文件</a>
-				</p>
-				<p>
-					<a href="R/index.html" target="_blank" id="R">R文件</a>
-				</p>
-				<p>
-					<a href="excel/index.html" target="_blank" id="excel">Excel文件</a>
-				</p>
-				<p>
-					<a href="https://www.bilibili.com/video/BV1jt4y1v7qd" target="_blank" id="函数包配套教程">函数包配套教程</a>
-				</p>
-				<p>
-					<a href="program1.html" id="进制转换">进制转换</a>
-				</p>
-				<p>
-					<a href="program2.html" id="大富翁答案">大富翁答案</a>
-				</p>
-				<p>
-					<a href="program3.html" id="背英语">背英语</a>
-				</p>
-			</div>
-		</div>
-		<div id="footer">
-			<h2>喜欢网站可以给站长打钱</h2>
-		</div>
-	</div>
+    <div id="container">
+        <div id="header">
+            <p>联系邮箱<a href="mailto:bjjscgq@163.com">bjjscgq@163.com</a>&nbsp&nbsp&nbsp&nbsp&nbspb站<a href="https://space.bilibili.com/395657014">不觉己是春归去</a></p>
+        </div>
+        <div id="main">
+            <div id="医学统计">
+                <h1 class="head" onclick="showHideUl('医学统计')">▶医学统计</h1>
+                <ul style="display:none ">
+                    <li>
+                        <div id="计算题配套教程">
+                            <h2 class="head" onclick="showHideUl('计算题配套教程')">▶计算题配套教程</h2>
+                            <ul style="display:none ">
+                                <li>
+                                    <h3><a href="https://www.bilibili.com/video/BV1xA411J7KQ">医学统计计算题配套教程</a></h3>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li>
+                        <div id="第四版教材课后题（默认使用SPSS完成）">
+                            <h2 class="head" onclick="showHideUl('第四版教材课后题（默认使用SPSS完成）')">▶第四版教材课后题（默认使用SPSS完成）</h2>
+                            <ul style="display:none ">
+                                <li>
+                                    <div id="第三章">
+                                        <h3 class="head" onclick="showHideUl('第三章')">▶第三章</h3>
+                                        <ul style="display:none ">
+                                            <li>
+                                                <h4>
+                                                    <a href="医学统计\第4版教材课后题\第三章\第三章第5题.zip">第5题</a>
+                                                </h4>
+                                            </li>
+                                            <li>
+                                                <h4>
+                                                    <a href="医学统计\第4版教材课后题\第三章\第三章第6题.zip">第6题</a>
+                                                </h4>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div id="第四章">
+                                        <h3 class="head" onclick="showHideUl('第四章')">▶第四章</h3>
+                                        <ul style="display:none ">
+                                            <li>
+                                                <h4>
+                                                    <a href="医学统计\第4版教材课后题\第四章\第四章第2题.zip">第2题</a>
+                                                </h4>
+                                            </li>
+                                            <li>
+                                                <h4>
+                                                    <a href="医学统计\第4版教材课后题\第四章\第四章第3题.zip">第3题</a>
+                                                </h4>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div id="第七章">
+                                        <h3 class="head" onclick="showHideUl('第七章')">▶第七章</h3>
+                                        <ul style="display:none ">
+                                            <li>
+                                                <h4>
+                                                    <a href="医学统计\第4版教材课后题\第七章\第七章第3题.zip">第3题</a>
+                                                </h4>
+                                            </li>
+                                            <li>
+                                                <h4>
+                                                    <a href="医学统计\第4版教材课后题\第七章\第七章第4题.zip">第4题</a>
+                                                </h4>
+                                            </li>
+                                            <li>
+                                                <h4>
+                                                    <a href="医学统计\第4版教材课后题\第七章\第七章第6题.zip">第6题</a>
+                                                </h4>
+                                            </li>
+                                            <li>
+                                                <h4>
+                                                    <a href="医学统计\第4版教材课后题\第七章\第七章第7题.zip">第7题</a>
+                                                </h4>
+                                            </li>
+                                            <li>
+                                                <h4>
+                                                    <a href="医学统计\第4版教材课后题\第七章\第七章第10题.zip">第10题</a>
+                                                </h4>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div id="第八章">
+                                        <h3 class="head" onclick="showHideUl('第八章')">▶第八章</h3>
+                                        <ul style="display:none ">
+                                            <li>
+                                                <h4>
+                                                    <a href="医学统计\第4版教材课后题\第八章\第八章第2题.zip">第2题</a>
+                                                </h4>
+                                            </li>
+                                            <li>
+                                                <h4>
+                                                    <a href="医学统计\第4版教材课后题\第八章\第八章第4题.zip">第4题</a>
+                                                </h4>
+                                            </li>
+                                            <li>
+                                                <h4>
+                                                    <a href="医学统计\第4版教材课后题\第八章\第八章第5题.zip">第5题</a>
+                                                </h4>
+                                            </li>
+                                            <li>
+                                                <h4>
+                                                    <a href="医学统计\第4版教材课后题\第八章\第八章第6题.zip">第6题</a>
+                                                </h4>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div id="第九章">
+                                        <h3 class="head" onclick="showHideUl('第九章')">▶第九章</h3>
+                                        <ul style="display:none ">
+                                            <li>
+                                                <h4>
+                                                    <a href="医学统计\第4版教材课后题\第九章\第九章第1题.zip">第1题</a>
+                                                </h4>
+                                            </li>
+                                            <li>
+                                                <h4>
+                                                    <a href="医学统计\第4版教材课后题\第九章\第九章第2题.zip">第2题（R语言完成）</a>
+                                                </h4>
+                                            </li>
+                                            <li>
+                                                <h4>
+                                                    <a href="医学统计\第4版教材课后题\第九章\第九章第3题.zip">第3题（R语言完成）</a>
+                                                </h4>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div id="第十章">
+                                        <h3 class="head" onclick="showHideUl('第十章')">▶第十章</h3>
+                                        <ul style="display:none ">
+                                            <li>
+                                                <h4>
+                                                    <a href="医学统计\第4版教材课后题\第十章\第十章第2题.zip">第2题（Excel完成）</a>
+                                                </h4>
+                                            </li>
+                                            <li>
+                                                <h4>
+                                                    <a href="医学统计\第4版教材课后题\第十章\第十章第3题.zip">第3题（Excel完成）</a>
+                                                </h4>
+                                            </li>
+                                            <li>
+                                                <h4>
+                                                    <a href="医学统计\第4版教材课后题\第十章\第十章第4题.zip">第4题（Excel完成）</a>
+                                                </h4>
+                                            </li>
+                                            <li>
+                                                <h4>
+                                                    <a href="医学统计\第4版教材课后题\第十章\第十章第5题.zip">第5题（Excel完成）</a>
+                                                </h4>
+                                            </li>
+                                            <li>
+                                                <h4>
+                                                    <a href="医学统计\第4版教材课后题\第十章\第十章第6题.zip">第6题</a>
+                                                </h4>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div id="第十二章">
+                                        <h3 class="head" onclick="showHideUl('第十二章')">▶第十二章</h3>
+                                        <ul style="display:none ">
+                                            <li>
+                                                <h4>
+                                                    <a href="医学统计\第4版教材课后题\第十二章\第十二章第2题.zip">第2题</a>
+                                                </h4>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div id="第十五章">
+                                        <h3 class="head" onclick="showHideUl('第十五章')">▶第十五章</h3>
+                                        <ul style="display:none ">
+                                            <li>
+                                                <h4>
+                                                    <a href="医学统计\第4版教材课后题\第十五章\第十五章第1题.zip">第1题</a>
+                                                </h4>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div id="第十九章">
+                                        <h3 class="head" onclick="showHideUl('第十九章')">▶第十九章</h3>
+                                        <ul style="display:none ">
+                                            <li>
+                                                <h4>
+                                                    <a href="医学统计\第4版教材课后题\第十九章\第十九章第1题.zip">第1题</a>
+                                                </h4>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li>
+                        <div id="SPSS原创扩展包">
+                            <h2 class="head" onclick="showHideUl('SPSS原创扩展包')">▶SPSS原创扩展包</h2>
+                            <ul style="display:none ">
+                                <li>
+                                    <div id="双尾二项检验">
+                                        <h3 class="head" onclick="showHideUl('双尾二项检验')">▶双尾二项检验</h3>
+                                        <ul style="display:none ">
+                                            <li>
+                                                <h4><a href="医学统计\SPSS原创拓展包\双尾二项检验\BINOMIAL.spe">函数包</a></h4>
+                                            </li>
+                                            <li>
+                                                <h4><a href="https://www.bilibili.com/video/BV1jt4y1v7qd">视频教程</a></h4>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div id="实用工具">
+                <h1 class="head" onclick="showHideUl('实用工具')">▶实用工具</h1>
+                <ul style="display:none ">
+                    <li>
+                        <h2><a href="program1.html">进制转换</a></h2>
+                    </li>
+                    <li>
+                        <h2><a href="program2.html">背英语</a></h2>
+                    </li>
+                </ul>
+            </div>
+            <div id="休闲娱乐">
+                <h1 class="head" onclick="showHideUl('休闲娱乐')">▶休闲娱乐</h1>
+                <ul style="display:none ">
+                    <li>
+                        <h2><a href="game1.html">井字棋</a></h2>
+                    </li>
+                    <li>
+                        <h2><a href="game2.html">捡金币</a></h2>
+                    </li>
+                    <li>
+                        <h2><a href="game3.html">三羧酸循环之旅答案</a></h2>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div id="footer">
+            <h1>喜欢网站可以给站长打钱</h1>
+        </div>
+    </div>
 </body>
+
 </html>
