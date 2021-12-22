@@ -2877,19 +2877,37 @@ function _js_dialog_choices(index, title, choicelist, initvalue) {
     var items = choicestr.slice(1).split(choicestr[0]);
     var options = [];
     for (var i in items) {
-        if (i == "Trivial") {
-            i = "简单";
-        } else if (i == "Basic") {
-            i = "基础";
-        } else if (i == "Intermediate") {
-            i = "中等";
-        } else if (i == "Advanced") {
-            i = "进阶";
-        } else if (i == "Extreme") {
-            i = "极难";
-        } else if (i == "Unreasonable") {
-            i = "地狱";
-        }
+        if (items[i] == "Trivial") {
+            items[i] = "简单";
+        } else if (items[i] == "Basic") {
+            items[i] = "基础";
+        } else if (items[i] == "Intermediate") {
+            items[i] = "中等";
+        } else if (items[i] == "Advanced") {
+            items[i] = "进阶";
+        } else if (items[i] == "Extreme") {
+            items[i] = "极难";
+        } else if (items[i] == "Unreasonable") {
+            items[i] = "地狱";
+        } else if (items[i] == "Unreasonable") {
+            items[i] = "地狱";
+        } else if (items[i] == "None") {
+            items[i] = "无";
+        } else if (items[i] == "2-way rotation") {
+            items[i] = "二阶旋转对称";
+        } else if (items[i] == "4-way rotation") {
+            items[i] = "四阶旋转对称";
+        } else if (items[i] == "2-way mirror") {
+            items[i] = "二阶镜像对称";
+        } else if (items[i] == "2-way diagonal mirror") {
+            items[i] = "二阶对角对称";
+        } else if (items[i] == "4-way mirror") {
+            items[i] = "四阶镜像对称";
+        } else if (items[i] == "4-way diagonal mirror") {
+            items[i] = "四阶对角对称";
+        } else if (items[i] == "8-way mirror") {
+            items[i] = "八阶镜像对称";
+        } 
         var option = document.createElement("option");
         option.value = i;
         option.appendChild(document.createTextNode(items[i]));
@@ -2931,7 +2949,13 @@ function _js_dialog_launch() {
 }
 
 function _js_dialog_string(index, title, initialtext) {
-    dlg_form.appendChild(document.createTextNode(UTF8ToString(title)));
+    var title1 = UTF8ToString(title);
+    if(title1 == "Columns of sub-blocks"){
+        title1 = "分块列数";
+    }else if(title1 == "Rows of sub-blocks"){
+        title1 = "分块行数";
+    }
+    dlg_form.appendChild(document.createTextNode(title1));
     var editbox = document.createElement("input");
     editbox.type = "text";
     editbox.value = UTF8ToString(initialtext);
