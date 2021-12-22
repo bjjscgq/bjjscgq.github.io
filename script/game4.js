@@ -395,11 +395,11 @@ function initPuzzle() {
             free_save_file(savefile_ptr);
             dialog_init("下载存档");
             dlg_form.appendChild(document.createTextNode(
-                "Click to download the "));
+                "点击下载"));
             var a = document.createElement("a");
             a.download = "puzzle.sav";
             a.href = "data:application/octet-stream," + savefile_text;
-            a.appendChild(document.createTextNode("saved-game file"));
+            a.appendChild(document.createTextNode("存档"));
             dlg_form.appendChild(a);
             dlg_form.appendChild(document.createTextNode("."));
             dlg_form.appendChild(document.createElement("br"));
@@ -2489,6 +2489,7 @@ var ASM_CONSTS = {
 
   function _js_add_preset(menuid, ptr, value) {
           var name = UTF8ToString(ptr);
+          name = "简单";
           var item = document.createElement("li");
           item.setAttribute("data-index", value);
           var tick = document.createElement("span");
