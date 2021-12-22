@@ -3,7 +3,7 @@
 
 <head>
     <meta http-equiv="Content-Type" content="text/html;">
-    <title>数独, from Simon Tatham's Portable Puzzle Collection</title>
+    <title>数独, 汉化自Simon Tatham的谜题合集</title>
     <script defer type="text/javascript" src="script/game4.js"></script>
     <style class="text/css">
     #gamemenu {
@@ -163,26 +163,26 @@
 
 <body>
     <h1 align="center">数独</h1>
-    <h2 align="center">from Simon Tatham's Portable Puzzle Collection</h2>
+    <h2 align="center">汉化自Simon Tatham的谜题合集</h2>
     <hr>
     <div id="puzzle" style="display: inline;">
         <div id="gamemenu">
             <ul>
-                <li>Game...<ul>
-                        <li id="specific">Enter game ID</li>
-                        <li id="random">Enter random seed</li>
-                        <li id="save">Download save file</li>
-                        <li id="load">Upload save file</li>
+                <li>游戏...<ul>
+                        <li id="specific">输入游戏ID</li>
+                        <li id="random">输入随机种子</li>
+                        <li id="save">下载存档</li>
+                        <li id="load">上传存档</li>
                     </ul>
                 </li>
-                <li>Type...<ul id="gametype"></ul>
+                <li>类型...<ul id="gametype"></ul>
                 </li>
                 <li class="separator"></li>
-                <li id="new" class="afterseparator">New game</li>
-                <li id="restart">Restart game</li>
-                <li id="undo" class="disabled">Undo move</li>
-                <li id="redo" class="disabled">Redo move</li>
-                <li id="solve">Solve game</li>
+                <li id="new" class="afterseparator">新游戏</li>
+                <li id="restart">重新开始</li>
+                <li id="undo" class="disabled">撤销</li>
+                <li id="redo" class="disabled">恢复</li>
+                <li id="solve">一键求解</li>
             </ul>
         </div>
         <div align="center">
@@ -194,9 +194,9 @@
                 <canvas width="10" height="10" title="Drag to resize the puzzle. Right-click to restore the default size." style="position: absolute; z-index: 98; bottom: 0px; right: 0px; cursor: se-resize;"></canvas>
             </div>
             <p>
-                Link to this puzzle:
-                <a id="permalink-desc" href="https://www.chiark.greenend.org.uk/~sgtatham/puzzles/js/solo.html#3x3:a5_8i3c9a4a3_6_5b2c6c8a3_3_4e7_2_1a7c6c2b9_7_3a1a7c8i4_8a">by game ID</a>
-                <a id="permalink-seed" href="https://www.chiark.greenend.org.uk/~sgtatham/puzzles/js/solo.html#3x3#174436414631932" style="display: inline;">by random seed</a>
+                链接到本题:
+                <a id="permalink-desc" href="https://www.chiark.greenend.org.uk/~sgtatham/puzzles/js/solo.html#3x3:a5_8i3c9a4a3_6_5b2c6c8a3_3_4e7_2_1a7c6c2b9_7_3a1a7c8i4_8a">通过游戏ID</a>
+                <a id="permalink-seed" href="https://www.chiark.greenend.org.uk/~sgtatham/puzzles/js/solo.html#3x3#174436414631932" style="display: inline;">通过随机种子</a>
             </p>
         </div>
     </div>
@@ -246,41 +246,31 @@
     </div>
     <hr>
     <p>
-        Fill in a number in every square so that every number appears
-        exactly once in each row, each column and each block marked by thick
-        lines.
+        在每个方格中填入数字使得每个数字在每行每列和每个分块中出现且仅出现一次。
     </p>
     <p>
-        To place a number, click in a square to select it, then type the
-        number on the keyboard. To erase a number, click to select a square
-        and then press Backspace.
+        点击选中方格，键入数字，可以填入数字。点击选中方格，按backspace，可以擦掉数字。
     </p>
     <p>
-        Right-click in a square and then type a number to add or remove the
-        number as a pencil mark, indicating numbers that you think
-        <em>might</em> go in that square.
+        右键方格，键入数字，可以增加或删除一个数字作为铅笔标记，表明你认为该数字
+        <em>可能</em> 填入该格.
     </p>
     <p>
-        When you master the basic game, try Jigsaw mode (irregularly shaped
-        blocks), X mode (the two main diagonals of the grid must also
-        contain every number once), Killer mode (instead of single-cell
-        clues you are given regions of the grid each of which must add up to
-        a given total, again without reusing any digits), or all of those at
-        once!
+        当你掌握了基础模式后, 可以尝试拼图模式(不规则的分块), X模式(两个主对角线也得只包含一次数字), 杀手模式(给出的不是单格线索而是网格中给定的区域，每个区域的总和必须等于给定的总数，同样不重复使用任何数字), 或者一次完成所有这些!
     </p>
     <p align="center">
-        <a href="https://www.chiark.greenend.org.uk/~sgtatham/puzzles/doc/solo.html#solo">Full instructions</a>
+        <a href="https://www.chiark.greenend.org.uk/~sgtatham/puzzles/doc/solo.html#solo">完整英文介绍</a>
         |
-        <a href="https://www.chiark.greenend.org.uk/~sgtatham/puzzles/">Back to main puzzles page</a>
+        <a href="https://www.chiark.greenend.org.uk/~sgtatham/puzzles/">谜题合集原链接</a>
     </p>
     <hr>
-    (comments to <a href="mailto:anakin@pobox.com">anakin@pobox.com</a>)
+    (评价 <a href="mailto:anakin@pobox.com">anakin@pobox.com</a>)
     <br>
-    (thanks to
+    (感谢
     <a href="https://www.chiark.greenend.org.uk/">chiark</a>
-    for hosting this page)
+    提供本游戏的网址)
     <br>
-    (last modified on
+    (最后一次修改于
     <!--LASTMOD-->Sun Dec 12 01:48:20 2021
     <!--END-->)
 </body>

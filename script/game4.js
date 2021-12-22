@@ -393,7 +393,7 @@ function initPuzzle() {
             var savefile_ptr = get_save_file();
             var savefile_text = UTF8ToString(savefile_ptr);
             free_save_file(savefile_ptr);
-            dialog_init("Download saved-game file");
+            dialog_init("下载存档");
             dlg_form.appendChild(document.createTextNode(
                 "Click to download the "));
             var a = document.createElement("a");
