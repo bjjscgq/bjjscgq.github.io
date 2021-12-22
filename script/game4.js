@@ -415,7 +415,7 @@ function initPuzzle() {
 
     document.getElementById("load").onclick = function(event) {
         if (dlg_dimmer === null) {
-            dialog_init("Upload saved-game file");
+            dialog_init("上传存档");
             var input = document.createElement("input");
             input.type = "file";
             input.multiple = false;
@@ -2574,7 +2574,7 @@ function _js_add_preset(menuid, ptr, value) {
     }else if(name == "4x4 Basic"){
         name = "4x4 基础";
     }else if(name == "Custom"){
-        name = "设置";
+        name = "自定义";
     }
     var item = document.createElement("li");
     item.setAttribute("data-index", value);
