@@ -224,6 +224,9 @@ function dialog_init(titletext) {
 
     var title = document.createElement("p");
     title.style.marginTop = "0px";
+    if (titletext == "Solo configuration") {
+        titletext = "数独设置"
+    }
     title.appendChild(document.createTextNode(titletext));
     dlg_form.appendChild(title);
 
@@ -238,7 +241,7 @@ function dialog_launch(ok_function, cancel_function) {
     if (ok_function) {
         button = document.createElement("input");
         button.type = "button";
-        button.value = "OK";
+        button.value = "确认";
         button.onclick = ok_function;
         dlg_form.appendChild(button);
     }
@@ -246,7 +249,7 @@ function dialog_launch(ok_function, cancel_function) {
     if (cancel_function) {
         button = document.createElement("input");
         button.type = "button";
-        button.value = "Cancel";
+        button.value = "取消";
         button.onclick = cancel_function;
         dlg_form.appendChild(button);
     }
@@ -2543,37 +2546,37 @@ function _js_add_preset(menuid, ptr, value) {
     var name = UTF8ToString(ptr);
     if (name == "2x2 Trivial") {
         name = "2x2 简单";
-    }else if(name == "2x3 Basic"){
+    } else if (name == "2x3 Basic") {
         name = "2x3 基础";
-    }else if(name == "3x3 Trivial"){
+    } else if (name == "3x3 Trivial") {
         name = "3x3 简单";
-    }else if(name == "3x3 Basic"){
+    } else if (name == "3x3 Basic") {
         name = "3x3 基础";
-    }else if(name == "3x3 Basic X"){
+    } else if (name == "3x3 Basic X") {
         name = "3x3 基础 X";
-    }else if(name == "3x3 Intermediate"){
+    } else if (name == "3x3 Intermediate") {
         name = "3x3 中等";
-    }else if(name == "3x3 Advanced"){
+    } else if (name == "3x3 Advanced") {
         name = "3x3 进阶";
-    }else if(name == "3x3 Advanced X"){
+    } else if (name == "3x3 Advanced X") {
         name = "3x3 进阶 X";
-    }else if(name == "3x3 Extreme"){
+    } else if (name == "3x3 Extreme") {
         name = "3x3 极难";
-    }else if(name == "3x3 Unreasonable"){
+    } else if (name == "3x3 Unreasonable") {
         name = "3x3 地狱";
-    }else if(name == "3x3 Killer"){
+    } else if (name == "3x3 Killer") {
         name = "3x3 杀手";
-    }else if(name == "9 Jigsaw Basic"){
+    } else if (name == "9 Jigsaw Basic") {
         name = "9 拼图 基础";
-    }else if(name == "9 Jigsaw Basic X"){
+    } else if (name == "9 Jigsaw Basic X") {
         name = "9 拼图 基础 X";
-    }else if(name == "9 Jigsaw Advanced"){
+    } else if (name == "9 Jigsaw Advanced") {
         name = "9 拼图 进阶";
-    }else if(name == "3x4 Basic"){
+    } else if (name == "3x4 Basic") {
         name = "3x4 基础";
-    }else if(name == "4x4 Basic"){
+    } else if (name == "4x4 Basic") {
         name = "4x4 基础";
-    }else if(name == "Custom"){
+    } else if (name == "Custom") {
         name = "自定义";
     }
     var item = document.createElement("li");
@@ -2844,7 +2847,15 @@ function _js_dialog_boolean(index, title, initvalue) {
     dlg_form.appendChild(checkbox);
     var checkboxlabel = document.createElement("label");
     checkboxlabel.setAttribute("for", checkbox.id);
-    checkboxlabel.textContent = UTF8ToString(title);
+    var title1 = UTF8ToString(title);
+    if (title1 == '"X" (require every number in each main diagonal)') {
+        title1 = '"X"(需要主对角线上的数字各异)';
+    } else if (title1 == 'Jigsaw (irregularly shaped sub-blocks)') {
+        title1 = '拼图(不规则的分块)';
+    } else if (title1 == 'Killer (digit sums)') {
+        title1 = '杀手(给出数字和)';
+    }
+    checkboxlabel.textContent = title1;
     dlg_form.appendChild(checkboxlabel);
     dlg_form.appendChild(document.createElement("br"));
 
@@ -2854,12 +2865,31 @@ function _js_dialog_boolean(index, title, initvalue) {
 }
 
 function _js_dialog_choices(index, title, choicelist, initvalue) {
-    dlg_form.appendChild(document.createTextNode(UTF8ToString(title)));
+    var title2 = UTF8ToString(title);
+    if (title2 == "Symmetry") {
+        title2 = "对称性";
+    } else if (title2 == "Difficulty") {
+        title2 = "难度";
+    }
+    dlg_form.appendChild(document.createTextNode(title2));
     var dropdown = document.createElement("select");
     var choicestr = UTF8ToString(choicelist);
     var items = choicestr.slice(1).split(choicestr[0]);
     var options = [];
     for (var i in items) {
+        if (i == "Trivial") {
+            i = "简单";
+        } else if (i == "Basic") {
+            i = "基础";
+        } else if (i == "Intermediate") {
+            i = "中等";
+        } else if (i == "Advanced") {
+            i = "进阶";
+        } else if (i == "Extreme") {
+            i = "极难";
+        } else if (i == "Unreasonable") {
+            i = "地狱";
+        }
         var option = document.createElement("option");
         option.value = i;
         option.appendChild(document.createTextNode(items[i]));
